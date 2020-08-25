@@ -6,8 +6,8 @@ function Header() {
         <header>
             <nav>
                 <Link to='/interviews'><p>Interviews</p></Link>
-                <p>Style</p>
-                <p>Travel</p>
+                <Link to='/style'><p>Style</p></Link>
+                <Link to='/travel'><p>Travel</p></Link>
             </nav>
             <Link to='/'><h2>Smidge</h2></Link>
             <nav>

@@ -1,2 +1,2 @@
 SELECT * FROM blog_posts
-WHERE tags = 'interview';
+WHERE tags = $1;
