@@ -28,5 +28,6 @@ massive({
 
 
 app.get('/api/posts', postCtrl.getAllPosts);
+app.get('/api/interview/posts', postCtrl.getInterviewPosts)
 
 app.listen(SERVER_PORT, () => console.log('Server is running on ' + SERVER_PORT));

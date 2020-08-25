@@ -5,11 +5,11 @@ function Header() {
     return(
         <header>
             <nav>
-                <p>Interviews</p>
+                <Link to='/interviews'><p>Interviews</p></Link>
                 <p>Style</p>
                 <p>Travel</p>
             </nav>
-            <h2>Smidge</h2>
+            <Link to='/'><h2>Smidge</h2></Link>
             <nav>
                 <Link to='/contact'><p>Contact</p></Link>
                 <p>Sign Up</p>
