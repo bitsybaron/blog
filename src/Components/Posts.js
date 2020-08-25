@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Post from './Post'
 import {useSelector, useDispatch} from 'react-redux';
 import {getAllPosts} from '../redux/postReducer';
 import axios from 'axios';
@@ -6,6 +7,7 @@ import axios from 'axios';
 function Posts() {
     const posts = useSelector((r) => r.posts); 
     const dispatch = useDispatch();
+    
 
     useEffect(() => {
         axios.get('/api/posts')
@@ -18,12 +20,8 @@ function Posts() {
     return(
         
         <div>
-            {posts.map((post) => {
-                return <div key='post.post_id'>    
-                    <p>{post.title}</p>
-                    <p>{post.description}</p>
-                    <img src={post.image}/>
-                </div>
+            {posts.map(post => {
+                return <Post key={post.post_id} post={post}/>
             })}
         </div>
     )
