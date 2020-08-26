@@ -1,15 +1,33 @@
+
 header {
   display: flex;
-  background-color: rgb(97, 163, 216);
-  justify-content: space-around;
+  
+  font-family: 'Open Sans', sans-serif;
+  justify-content: space-evenly;
   align-items: center;
-  color: white;
+  color: gray;
+  font-size: 23px;
+  
+  width: 79%;
+  margin: 0 auto;
 }
 
 header > nav {
   display: flex;
-  width: 23%;
-  justify-content: space-around;
+  justify-content: space-between;
+  
+  width: 50%;
+  
+}
+
+.sploosh {
+  height: 200px;
+}
+
+
+.headLink:link, .headLink:visited {
+  color: gray;
+  text-decoration: none;
 }
 
 nav > img {
@@ -17,3 +35,35 @@ nav > img {
   margin-top: 10px
 }
 
+
+
+.post > img {
+  height: 400px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  color: gray;
+  width: 79%;
+}
+
+.post-title {
+  font-family: 'Glass Antiqua', cursive;
+  color: rgb(48, 87, 61);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.post-description {
+  color: rgb(68, 68, 68);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25;
+}
+
+.post {
+  
+}

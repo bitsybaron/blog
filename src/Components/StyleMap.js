@@ -4,8 +4,8 @@ function StyleMap(props) {
     const [readMore, setReadMore] = useState(false);
     return(
         
-        <div>
-            <p>{props.post.title}</p>
+        <div className='post'>
+            <p className='post-title'>{props.post.title}</p>
             <p>{props.post.description}</p>
             <img src={props.post.image}/>
             {readMore === false ? 

@@ -7,9 +7,13 @@ import './App.css'
 function App() {
   
   return(
-    <div>
+    <div className='App'>
+      
       <Header />
+      <hr></hr>
+      <main className='main'>
       {routes}
+      </main>
       <Footer />
       
     </div>

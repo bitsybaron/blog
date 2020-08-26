@@ -4,10 +4,10 @@ function InterviewMap(props) {
     const [readMore, setReadMore] = useState(false);
     return(
         
-        <div>
+        <div className='post'>
             <div>
-            <p>{props.post.title}</p>
-            <p>{props.post.description}</p>
+            <p className='post-title'>{props.post.title}</p>
+            <p className='post-description'>{props.post.description}</p>
             <img src={props.post.image}/>
             {readMore === false ? 
             <p onClick={() => setReadMore(true)}>Read more...</p> : 

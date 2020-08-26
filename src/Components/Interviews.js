@@ -13,7 +13,6 @@ const Interviews = () => {
         axios.get(`/api/filtered/posts/${'interview'}`)
         .then(res => {
             dispatch(getPosts(res.data))
-            console.log(res.data)
         }).catch(err => console.log(err))
     }, [])
 
