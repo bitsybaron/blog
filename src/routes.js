@@ -6,6 +6,7 @@ import Interviews from './Components/Interviews'
 import Style from './Components/Style'
 import Travel from './Components/Travel';
 import Shop from './Components/Shop';
+import Auth from './Components/Auth';
 
 
 
@@ -17,5 +18,6 @@ export default (
         <Route path='/style' component={Style}/>
         <Route path='/travel' component={Travel}/>
         <Route path='/shop' component={Shop}/>
+        <Route path='/auth' component={Auth}/>
     </Switch>
 )

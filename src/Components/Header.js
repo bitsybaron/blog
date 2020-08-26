@@ -1,8 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Sploosh from '../f1f14569-ef47-4ea7-b386-32f75cf1ca23_200x200.png'
+import {useSelector} from 'react-redux';
 
 function Header() {
+    const state = useSelector((r) => r);
+    console.log(state);
+
     return (
         <header>
             <nav>
@@ -18,7 +22,8 @@ function Header() {
             <nav>
                 <Link className='headLink' to='/contact'><p >Contact</p></Link>
                 <Link to='/shop'><p>Shop</p></Link>
-                <p >Sign Up</p>
+                {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
+                 <p>Logout</p>}
                 <p>Cart</p>
             </nav>
             

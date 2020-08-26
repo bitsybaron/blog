@@ -5,6 +5,7 @@ const app = express();
 const massive = require('massive');
 const postCtrl = require('./postController');
 const shopCtrl = require('./shopController');
+const authCtrl = require('./authController');
 const stripe = require('stripe')('sk_test_51HK6w9Kt7srICsPZynNuWdhzGXOBs8d29WHU694THYXyxnJdp3b6ozLOr5KtOrr9Navm9TuyfxlBjeIYWPpfV5Wd00nOrEzDPl');
 
 app.use(express.json());
@@ -49,6 +50,7 @@ app.post('/create-payment-intent', async (req, res) => {
     })
 })
 app.get('/api/products', shopCtrl.getProducts);
+app.post('/auth/register', authCtrl.register);
 
 
 app.listen(SERVER_PORT, () => console.log('Server is running on ' + SERVER_PORT));
