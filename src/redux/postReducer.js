@@ -37,6 +37,19 @@ export function getCart(cart){
     }
 }
 
+export function loginUser(user){
+    return {
+        type: "LOGIN",
+        payload: user
+    }
+}
+
+export function logoutUser(user){
+    return {
+        type: "LOGOUT",
+        payload: initialState
+    }
+}
 
 export default function reducer(state = initialState, action){
     const {type, payload} = action
@@ -49,6 +62,10 @@ export default function reducer(state = initialState, action){
             return {...state, cart: payload}
         case "REGISTER": 
             return {...state, user: payload, isLoggedIn: true}
+        case "LOGIN":
+            return {...state, user: payload, isLoggedIn: true}
+        case "LOGOUT":
+            return {...state, ...payload}
         default:
             return state
     }

@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import Sploosh from '../f1f14569-ef47-4ea7-b386-32f75cf1ca23_200x200.png'
 import {useSelector} from 'react-redux';
 
+
 function Header() {
     const state = useSelector((r) => r);
     console.log(state);
@@ -32,3 +33,5 @@ function Header() {
 }
 
 export default Header;
+
+//ADD LOGOUT ONCLICK TO LOGOUT && CREATE LOGOUT FUNCTION

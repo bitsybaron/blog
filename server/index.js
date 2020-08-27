@@ -51,6 +51,8 @@ app.post('/create-payment-intent', async (req, res) => {
 })
 app.get('/api/products', shopCtrl.getProducts);
 app.post('/auth/register', authCtrl.register);
+app.post('/auth/login', authCtrl.login);
+app.get('/auth/logout', authCtrl.logout);
 
 
 app.listen(SERVER_PORT, () => console.log('Server is running on ' + SERVER_PORT));
