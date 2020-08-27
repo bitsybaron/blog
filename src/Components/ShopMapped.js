@@ -8,14 +8,25 @@ function ShopMapped(props) {
     const state = useSelector(r => r);
     const dispatch = useDispatch();
     const {product} = props;
+    console.log(state);
     const addToCart = () => {
         const {product_id} = product;
         const {userId} = state.user
         console.log(userId)
-        axios.post('/api/item', {userId, product_id})
-        .then(res => 
-            console.log(res.data))
-        .catch(err => console.log(err))
+        
+        if (state.cart[0]) {
+            for(let i = 0; i < state.cart.length; i++){
+                if (state.cart[0].product_id !== product_id){
+                    axios.post('/api/item', {userId, product_id})
+                    .then(res => 
+                    console.log(res.data))
+                    .catch(err => console.log(err))
+                } else {
+                    // add axios call and function that will increase the quantity
+                }
+            }
+        }
+        
     }
 
     return(

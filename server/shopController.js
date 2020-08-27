@@ -8,6 +8,7 @@ module.exports = {
     addToCart: async (req, res) => {
         const db = req.app.get('db');
         const {userId, product_id} = req.body;
+        
         const cart = await db.add_to_cart(userId, product_id);
         res.status(200).send(cart)
     },
