@@ -1,12 +1,30 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Sploosh from '../f1f14569-ef47-4ea7-b386-32f75cf1ca23_200x200.png'
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {logoutUser} from '../redux/postReducer';
+import { useHistory } from "react-router-dom";
+
+import axios from 'axios';
 
 
 function Header() {
     const state = useSelector((r) => r);
-    console.log(state);
+    const dispatch = useDispatch();
+    const history = useHistory();
+    
+
+    const logout = () => {
+        axios.get('/auth/logout')
+        .then(res => {
+            console.log('logged out');
+            dispatch(logoutUser());
+            history.push('/')
+            alert('Sad!! See you soon, hon')
+
+
+        }).catch(err => console.log(err))
+    }
 
     return (
         <header>
@@ -24,7 +42,7 @@ function Header() {
                 <Link className='headLink' to='/contact'><p >Contact</p></Link>
                 <Link to='/shop'><p>Shop</p></Link>
                 {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
-                 <p>Logout</p>}
+                 <p onClick={() => logout()}>Logout</p>}
                 <p>Cart</p>
             </nav>
             

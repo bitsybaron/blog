@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function Shop() {
     const shop = useSelector((r) => r.products); 
+    const state = useSelector(r => r);
     const dispatch = useDispatch();
     
 
@@ -20,6 +21,11 @@ function Shop() {
     return(
         
         <div>
+            <div>
+    {state.isLoggedIn ? <p>Happy shopping, {state.user.name}!</p> :
+     null}
+
+            </div>
             {shop.map(product => {
                 return <ShopMapped key={product.product_id} product={product}/>
             })}
