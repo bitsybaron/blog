@@ -1,9 +1,23 @@
 import React, {useState} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {getCart} from '../redux/postReducer';
+import axios from 'axios';
 
 function ShopMapped(props) {
-    const [readMore, setReadMore] = useState(false);
-    console.log(props)
+    
+    const state = useSelector(r => r);
+    const dispatch = useDispatch();
     const {product} = props;
+    const addToCart = () => {
+        const {product_id} = product;
+        const {userId} = state.user
+        console.log(userId)
+        axios.post('/api/item', {userId, product_id})
+        .then(res => 
+            console.log(res.data))
+        .catch(err => console.log(err))
+    }
+
     return(
         
         
@@ -12,8 +26,8 @@ function ShopMapped(props) {
             <p>{product.price}</p>
             <p>{product.product_details}</p>
             <img src={product.image}/>
-            <button>Add to Cart</button>
-            
+            <button onClick={addToCart}>Add to Cart</button>
+
             
         </div>
     )      

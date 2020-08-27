@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import ShopMapped from './ShopMapped'
 import {useSelector, useDispatch} from 'react-redux';
 import {getProducts} from '../redux/postReducer';

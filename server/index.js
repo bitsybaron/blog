@@ -53,6 +53,8 @@ app.get('/api/products', shopCtrl.getProducts);
 app.post('/auth/register', authCtrl.register);
 app.post('/auth/login', authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
+app.post('/api/item', shopCtrl.addToCart);
+app.get(`/api/cart/:userId`, shopCtrl.getCart);
 
 
 app.listen(SERVER_PORT, () => console.log('Server is running on ' + SERVER_PORT));

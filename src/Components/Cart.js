@@ -6,11 +6,13 @@ import axios from 'axios';
 
 function Cart() {
     const cart = useSelector((r) => r.cart); 
+    const state = useSelector(r => r);
     const dispatch = useDispatch();
     
 
     useEffect(() => {
-        axios.get('/api/cart')
+        const {userId} = state.user;
+        axios.get(`/api/cart/${userId}`)
         .then(res => {
             dispatch(getCart(res.data))
         }).catch(err => console.log(err))
@@ -21,7 +23,7 @@ function Cart() {
         
         <div>
             {cart.map(cart => {
-                return <CartMap key={cart.post_id} post={cart}/>
+                return <CartMap key={cart.order_id} cart={cart}/>
             })}
         </div>
     )

@@ -17,11 +17,11 @@ ALTER TABLE blog_store
 ADD COLUMN product_details TEXT;
 
 CREATE TABLE blog_cart (
-order_id SERIAL PRIMARY KEY, 
-product_id1 INT REFERENCES blog_store(product_id), 
-quant1 INT, 
-product_id2 INT REFERENCES blog_store(product_id), 
-quant2 INT);
+    order_id SERIAL PRIMARY KEY, 
+    user_id INT REFERENCES blog_users(user_id), 
+    product_id INT REFERENCES blog_store(product_id), 
+    quantity INT);
+
 
 CREATE TABLE blog_users (
     user_id SERIAL PRIMARY KEY,
@@ -29,3 +29,4 @@ CREATE TABLE blog_users (
     email VARCHAR(300),
     password VARCHAR(300)
 );
+
