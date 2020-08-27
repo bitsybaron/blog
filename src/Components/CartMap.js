@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import axios from 'axios';
 
 
@@ -19,7 +19,6 @@ function CartMap(props) {
         <p>{props.cart.price}</p>
         <p>{props.cart.quantity}</p>
         <button onClick={deleteItem}>Remove from Cart</button>
-//ADD USEEFFECT TO FIX THE RENDER OF THE DELETED ITEMS?
     </div>
     )      
 }
