@@ -43,7 +43,7 @@ function Header() {
                 <Link to='/shop'><p>Shop</p></Link>
                 {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
                  <p onClick={() => logout()}>Logout</p>}
-                <p>Cart</p>
+                <Link to='/cart'><p>Cart</p></Link>
             </nav>
             
         </header>

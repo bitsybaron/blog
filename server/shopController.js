@@ -17,6 +17,13 @@ module.exports = {
         const {userId} = req.params;
         const cart = await db.get_cart(userId);
         res.status(200).send(cart)
+    },
+    deleteItem: async (req, res) => {
+        const db = req.app.get('db');
+        const {order_id} = req.params;
+        const cart = await db.delete_cart_item(order_id);
+        res.sendStatus(200);
     }
+
 
  }
