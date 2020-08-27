@@ -16,14 +16,14 @@ function Cart() {
         .then(res => {
             dispatch(getCart(res.data))
         }).catch(err => console.log(err))
-    }, [cart])
+    }, [])
     
     
     return(
         
         <div>
             {cart.map(cart => {
-                return <CartMap key={cart.order_id} cart={cart}/>
+                return <CartMap key={cart.order_id} cart={cart} user={state.user}/>
             })}
         </div>
     )

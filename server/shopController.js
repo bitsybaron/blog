@@ -8,7 +8,6 @@ module.exports = {
     addToCart: async (req, res) => {
         const db = req.app.get('db');
         const {userId, product_id} = req.body;
-        console.log(userId, product_id);
         const cart = await db.add_to_cart(userId, product_id);
         res.status(200).send(cart)
     },
@@ -20,8 +19,9 @@ module.exports = {
     },
     deleteItem: async (req, res) => {
         const db = req.app.get('db');
-        const {order_id} = req.params;
-        const cart = await db.delete_cart_item(order_id);
+        const {product_id, userId} = req.params;
+        console.log(product_id, userId)
+        await db.delete_cart_item([product_id, userId]);
         res.sendStatus(200);
     }
 

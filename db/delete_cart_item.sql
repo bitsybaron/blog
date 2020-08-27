@@ -1,2 +1,2 @@
 DELETE FROM blog_cart
-WHERE order_id = $1;
+WHERE product_id = $1 AND active = TRUE AND user_id = $2;
