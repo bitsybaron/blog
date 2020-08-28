@@ -31,6 +31,12 @@ module.exports = {
        
         const cart = await db.increase_quant([userId, product_id]);
         res.status(200).send(cart);
+    },
+    getTotal: async (req, res) => {
+        const db = req.app.get('db');
+        const {userId} = req.params;
+        const total = await db.total(userId);
+        res.status(200).send(total)
     }
 
 

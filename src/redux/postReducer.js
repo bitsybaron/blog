@@ -1,8 +1,10 @@
+
+
 const initialState = {
     posts: [],
     products: [],
     cart: [],
-    
+    total: 0,
     user: {},
     isLoggedIn: false
 }
@@ -66,6 +68,12 @@ export function increment(cart){
     }
 }
 
+export function getTotal(total) {
+    return{
+        type: "TOTAL",
+        payload: total
+    }
+}
 
 
 export default function reducer(state = initialState, action){
@@ -83,7 +91,8 @@ export default function reducer(state = initialState, action){
             return {...state, user: payload, isLoggedIn: true}
         case "LOGOUT":
             return {...state, ...payload}
-        
+        case "TOTAL":
+            return {...state, total: payload}
         default:
             return state
     }

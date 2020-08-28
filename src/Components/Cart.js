@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import CartMap from './CartMap'
 import {useSelector, useDispatch} from 'react-redux';
-import {getCart} from '../redux/postReducer';
+import {getCart, getTotal} from '../redux/postReducer';
 import axios from 'axios';
 
 function Cart() {
@@ -16,6 +16,13 @@ function Cart() {
         .then(res => {
             dispatch(getCart(res.data))
         }).catch(err => console.log(err))
+        axios.get(`/api/total/${userId}`)
+        .then(res => {
+            const [total] = res.data
+            const {sum} = total
+            dispatch(getTotal(+sum))
+        })
+        .catch(err => console.log(err))
     }, [])
     
 
@@ -28,7 +35,7 @@ function Cart() {
             })}
             
             {cart.length > 0 ? <div>
-            <p>Total: {}</p>
+            <p>Total: {state.total}</p>
             <button>Checkout</button> </div>: <p>Cart items go here!</p>}
            
         </div>
