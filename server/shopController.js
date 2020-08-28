@@ -22,8 +22,8 @@ module.exports = {
         const db = req.app.get('db');
         const {product_id, userId} = req.params;
         
-        await db.delete_cart_item([product_id, userId]);
-        res.sendStatus(200);
+        const cart = await db.delete_cart_item([product_id, userId]);
+        res.status(200).send(cart);
     },
     increase: async (req, res) => {
         const db = req.app.get('db');

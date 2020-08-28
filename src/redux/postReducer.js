@@ -2,6 +2,7 @@ const initialState = {
     posts: [],
     products: [],
     cart: [],
+    
     user: {},
     isLoggedIn: false
 }
@@ -65,6 +66,8 @@ export function increment(cart){
     }
 }
 
+
+
 export default function reducer(state = initialState, action){
     const {type, payload} = action
     switch(type) {
@@ -80,10 +83,7 @@ export default function reducer(state = initialState, action){
             return {...state, user: payload, isLoggedIn: true}
         case "LOGOUT":
             return {...state, ...payload}
-        case "ADD_ITEM":
-            return {...state, cart: [...state.cart, ...payload]}
-        case "INCREMENT":
-            return {...state, cart: [...payload]}
+        
         default:
             return state
     }

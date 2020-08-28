@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getCart, addItem, increment} from '../redux/postReducer';
+import {getCart} from '../redux/postReducer';
 import axios from 'axios';
 
 function ShopMapped(props) {
@@ -11,14 +11,17 @@ function ShopMapped(props) {
     console.log(state);
     const addToCart = () => {
         const {product_id} = product;
+        
         const {userId} = state.user
+        
         // console.log(userId, product_id)
             if (state.cart.length === 0) {
                 console.log('hey there')
                 axios.post('/api/item', {userId, product_id})
                 .then(res => {
                     dispatch(getCart(res.data))
-                    console.log(res.data)
+                    
+                    console.log(state.total)
                 })
                 .catch(err => console.log(err))
                 
@@ -38,8 +41,10 @@ function ShopMapped(props) {
                 axios.put(`/api/item/${userId}/${product_id}`)
 
                     .then(res => {
-                        console.log('twas updated')
+                        
                         dispatch(getCart(res.data))
+                        
+                        console.log(state.total)
                     })
                     .catch(err => console.log(err))
             } else {
@@ -47,7 +52,8 @@ function ShopMapped(props) {
                 axios.post('/api/item', {userId, product_id})
                 .then(res => {
                     dispatch(getCart(res.data))
-                    console.log(res.data)
+                    
+                    console.log(state.total)
                 })
                 .catch(err => console.log(err))
             }

@@ -17,7 +17,6 @@ function Shop() {
         }).catch(err => console.log(err))
     }, [state.cart])
     
-    console.log(shop)
     return(
         
         <div>

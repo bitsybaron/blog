@@ -18,13 +18,19 @@ function Cart() {
         }).catch(err => console.log(err))
     }, [])
     
-    
+
+    console.log(cart)
     return(
         
         <div>
             {cart.map(cart => {
                 return <CartMap key={cart.order_id} cart={cart} user={state.user}/>
             })}
+            
+            {cart.length > 0 ? <div>
+            <p>Total: {}</p>
+            <button>Checkout</button> </div>: <p>Cart items go here!</p>}
+           
         </div>
     )
 }
