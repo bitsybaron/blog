@@ -16,7 +16,7 @@ function Cart() {
         .then(res => {
             dispatch(getCart(res.data))
         }).catch(err => console.log(err))
-    }, [cart])
+    }, [])
     
     
     return(

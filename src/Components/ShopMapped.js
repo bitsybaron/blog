@@ -17,30 +17,41 @@ function ShopMapped(props) {
                 console.log('hey there')
                 axios.post('/api/item', {userId, product_id})
                 .then(res => {
-                    dispatch(addItem(res.data))
+                    dispatch(getCart(res.data))
+                    console.log(res.data)
                 })
                 .catch(err => console.log(err))
                 
 
             } else {
+                let unique = false;
                 for(let i = 0; i < state.cart.length; i++){
-                    if (state.cart[i].product_id !== product_id) {
-                        axios.post('/api/item', {userId, product_id})
-                        .then(res => {
-                            dispatch(addItem(res.data))
-                        })
-                        .catch(err => console.log(err))
-                    } else {
+                    if (state.cart[i].product_id === product_id) {
+                        unique = true;
                         
-                        axios.put(`/api/item/${userId}/${product_id}`)
-                        .then(res => {
-                            console.log('twas updated')
-                            dispatch(increment(res.data))
-                        })
-                        .catch(err => console.log(err))
-                    }
+                    } 
+                    
                 
             }
+            if (unique){
+                console.log('put')
+                axios.put(`/api/item/${userId}/${product_id}`)
+
+                    .then(res => {
+                        console.log('twas updated')
+                        dispatch(getCart(res.data))
+                    })
+                    .catch(err => console.log(err))
+            } else {
+                console.log('second post')
+                axios.post('/api/item', {userId, product_id})
+                .then(res => {
+                    dispatch(getCart(res.data))
+                    console.log(res.data)
+                })
+                .catch(err => console.log(err))
+            }
+            
             }
             
         

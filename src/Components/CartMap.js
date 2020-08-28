@@ -12,6 +12,7 @@ function CartMap(props) {
         axios.delete(`/api/item/${product_id}/${userId}`)
         .then(res => console.log('deleted!'))
         .catch(err => console.log(err))
+        // have my delete return the entire cart & add getCart
     }
     
     return(
