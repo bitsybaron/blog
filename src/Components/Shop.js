@@ -15,7 +15,7 @@ function Shop() {
         .then(res => {
             dispatch(getProducts(res.data))
         }).catch(err => console.log(err))
-    }, [])
+    }, [state.cart])
     
     console.log(shop)
     return(

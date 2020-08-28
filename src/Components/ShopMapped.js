@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getCart} from '../redux/postReducer';
+import {getCart, addItem, increment} from '../redux/postReducer';
 import axios from 'axios';
 
 function ShopMapped(props) {
@@ -12,20 +12,37 @@ function ShopMapped(props) {
     const addToCart = () => {
         const {product_id} = product;
         const {userId} = state.user
-        console.log(userId)
-        
-        if (state.cart[0]) {
-            for(let i = 0; i < state.cart.length; i++){
-                if (state.cart[0].product_id !== product_id){
-                    axios.post('/api/item', {userId, product_id})
-                    .then(res => 
-                    console.log(res.data))
-                    .catch(err => console.log(err))
-                } else {
-                    // add axios call and function that will increase the quantity
-                }
+        // console.log(userId, product_id)
+            if (state.cart.length === 0) {
+                console.log('hey there')
+                axios.post('/api/item', {userId, product_id})
+                .then(res => {
+                    dispatch(addItem(res.data))
+                })
+                .catch(err => console.log(err))
+                
+
+            } else {
+                for(let i = 0; i < state.cart.length; i++){
+                    if (state.cart[i].product_id !== product_id) {
+                        axios.post('/api/item', {userId, product_id})
+                        .then(res => {
+                            dispatch(addItem(res.data))
+                        })
+                        .catch(err => console.log(err))
+                    } else {
+                        
+                        axios.put(`/api/item/${userId}/${product_id}`)
+                        .then(res => {
+                            console.log('twas updated')
+                            dispatch(increment(res.data))
+                        })
+                        .catch(err => console.log(err))
+                    }
+                
             }
-        }
+            }
+            
         
     }
 
@@ -37,7 +54,7 @@ function ShopMapped(props) {
             <p>{product.price}</p>
             <p>{product.product_details}</p>
             <img src={product.image}/>
-            <button onClick={addToCart}>Add to Cart</button>
+            <button onClick={() => addToCart()}>Add to Cart</button>
 
             
         </div>

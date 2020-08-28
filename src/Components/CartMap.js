@@ -27,4 +27,3 @@ function CartMap(props) {
 
 export default CartMap;
 
-// my onclick needs to check to usee if the cart already includes the DataTransferItem, if it DOMSettableTokenList, add 1 to quatity
