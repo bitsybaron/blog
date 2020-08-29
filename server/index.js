@@ -57,7 +57,9 @@ app.delete(`/api/item/:product_id/:userId`, shopCtrl.deleteItem);
 app.post('/api/item', shopCtrl.addToCart);
 app.get(`/api/cart/:userId`, shopCtrl.getCart);
 app.put(`/api/item/:userId/:product_id`, shopCtrl.increase);
+app.put('/api/items/:userId/:product_id', shopCtrl.decrease);
 app.get('/api/total/:userId', shopCtrl.getTotal);
+
 
 
 app.listen(SERVER_PORT, () => console.log('Server is running on ' + SERVER_PORT));

@@ -37,6 +37,12 @@ module.exports = {
         const {userId} = req.params;
         const total = await db.total(userId);
         res.status(200).send(total)
+    },
+    decrease: async (req, res) => {
+        const db = req.app.get('db');
+        const {userId, product_id} = req.params;
+        const cart = await db.decrease_quantity([userId, product_id]);
+        res.status(200).send(cart);
     }
 
 
