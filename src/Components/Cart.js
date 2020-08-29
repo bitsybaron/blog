@@ -16,6 +16,10 @@ function Cart() {
         .then(res => {
             dispatch(getCart(res.data))
         }).catch(err => console.log(err))
+    }, [])
+
+    useEffect(() => {
+        const {userId} = state.user;
         axios.get(`/api/total/${userId}`)
         .then(res => {
             const [total] = res.data
@@ -23,7 +27,7 @@ function Cart() {
             dispatch(getTotal(+sum))
         })
         .catch(err => console.log(err))
-    }, [])
+    }, [state.cart])
     
 
     console.log(cart)
@@ -36,7 +40,7 @@ function Cart() {
             
             {cart.length > 0 ? <div>
             <p>Total: {state.total}</p>
-            <button>Checkout</button> </div>: <p>Cart items go here!</p>}
+            <button>Proceed to Checkout</button> </div>: <p>Cart items go here!</p>}
            
         </div>
     )
