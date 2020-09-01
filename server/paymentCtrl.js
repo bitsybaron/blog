@@ -12,17 +12,21 @@ module.exports = {
             source: token.id,
             description: 'Test charge'
         })
+
+        const db = req.app.get('db')
+        const cart = await db.complete_order(user_id)
+        console.log(cart);
+        res.status(200).send(cart)
+
         if (!charge) {
             throw new Error('unsuccessful charge')
         }
-        res.status(200).send(charge)
     
     }catch(error){
             console.log(error)
             res.status(500).send(error)
         }
-        // const db = req.app.get('db')
-        // db.complete_order(user_id)
+        
     }, 
 }
 

@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import CartMap from './CartMap'
 import {useSelector, useDispatch} from 'react-redux';
 import {getCart, getTotal} from '../redux/postReducer';
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
 import Checkout from './Checkout'
 
 
@@ -11,7 +10,7 @@ function Cart() {
     const cart = useSelector((r) => r.cart); 
     const state = useSelector(r => r);
     const dispatch = useDispatch();
-    const history = useHistory();
+    
     
 
     useEffect(() => {
