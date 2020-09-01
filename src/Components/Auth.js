@@ -42,12 +42,12 @@ const Auth = () => {
             Email 
             <input value={email} onChange={(e) => setEmail(e.target.value)}/>
             Password
-            <input value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <input value={password} type='password' onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={() => register()}>Register for an Account</button><br/><br/>
             Aready have an account? <p onClick={() => setExistingUser(true)}>Login Here</p>   
         </div> : <div>
             Email <input value={email} onChange={(e) => setEmail(e.target.value)}/>
-            Password <input value={password} onChange={(e) => setPassword(e.target.value)}/>
+            Password <input type='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={() => login()}>Login</button>
             New to Sploosh? <p onClick={() => setExistingUser(false)}>Create an account here</p>
         </div>

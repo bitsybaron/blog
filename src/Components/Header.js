@@ -39,7 +39,7 @@ function Header() {
             </nav>
             <Link to='/'><img className="sploosh" src={Sploosh}/></Link>
             <nav>
-                <Link className='headLink' to='/contact'><p >Contact</p></Link>
+                
                 <Link to='/shop'><p>Shop</p></Link>
                 {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
                  <p onClick={() => logout()}>Logout</p>}
@@ -52,4 +52,3 @@ function Header() {
 
 export default Header;
 
-//ADD LOGOUT ONCLICK TO LOGOUT && CREATE LOGOUT FUNCTION

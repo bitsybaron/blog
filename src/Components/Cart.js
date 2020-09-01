@@ -3,11 +3,15 @@ import CartMap from './CartMap'
 import {useSelector, useDispatch} from 'react-redux';
 import {getCart, getTotal} from '../redux/postReducer';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
+import Checkout from './Checkout'
+
 
 function Cart() {
     const cart = useSelector((r) => r.cart); 
     const state = useSelector(r => r);
     const dispatch = useDispatch();
+    const history = useHistory();
     
 
     useEffect(() => {
@@ -30,7 +34,7 @@ function Cart() {
     }, [state.cart])
     
 
-    console.log(cart)
+    
     return(
         
         <div>
@@ -40,10 +44,15 @@ function Cart() {
             
             {cart.length > 0 ? <div>
             <p>Total: {state.total}</p>
-            <button>Proceed to Checkout</button> </div>: <p>Cart items go here!</p>}
+            <Checkout 
+                                total={state.total * 100}
+                                getUser={state.user} 
+                                // orderId?
+                                user={state.user.userId} /> </div> : <p>Cart items go here!</p>}
            
         </div>
+    
     )
-}
+            }
 
 export default Cart;

@@ -71,7 +71,8 @@ function ShopMapped(props) {
             <p>{product.price}</p>
             <p>{product.product_details}</p>
             <img src={product.image}/>
-            <button onClick={() => addToCart()}>Add to Cart</button>
+            <button onClick={() => { state.isLoggedIn ? 
+                addToCart() : alert('please log in to shop!') }}>Add to Cart</button>
 
             
         </div>
