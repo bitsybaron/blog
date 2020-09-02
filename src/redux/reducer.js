@@ -4,9 +4,7 @@ const initialState = {
     posts: [],
     products: [],
     cart: [],
-    total: 0,
-    user: {},
-    isLoggedIn: false
+    total: 0
 }
 
 
@@ -18,12 +16,6 @@ export function getPosts(posts){
     }
 }
 
-export function registerUser(user){
-    return {
-        type: "REGISTER",
-        payload: user
-    }
-}
 
 export function getProducts(products){
     return {
@@ -40,19 +32,6 @@ export function getCart(cart){
     }
 }
 
-export function loginUser(user){
-    return {
-        type: "LOGIN",
-        payload: user
-    }
-}
-
-export function logoutUser(user){
-    return {
-        type: "LOGOUT",
-        payload: initialState
-    }
-}
 
 export function addItem(cart){
     return{
@@ -85,12 +64,6 @@ export default function reducer(state = initialState, action){
             return {...state, products: payload}
         case "GET_CART":
             return {...state, cart: payload}
-        case "REGISTER": 
-            return {...state, user: payload, isLoggedIn: true}
-        case "LOGIN":
-            return {...state, user: payload, isLoggedIn: true}
-        case "LOGOUT":
-            return {...state, ...payload}
         case "TOTAL":
             return {...state, total: payload}
         default:

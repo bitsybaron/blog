@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import axios from 'axios';
 import {useDispatch, useSelector} from 'react-redux';
-import {getCart, getTotal} from '../redux/postReducer';
+import {getCart} from '../redux/reducer';
 
 
 function CartMap(props) {
-    const state = useSelector(r => r);
+    const auth = useSelector(r => r.authReducer);
     const dispatch = useDispatch();
    
 
@@ -27,7 +27,7 @@ function CartMap(props) {
 
     const increment = () => {
         const {product_id} = props.cart;
-        const {userId} = state.user
+        const {userId} = auth.user
         console.log(product_id, userId)
         axios.put(`/api/item/${userId}/${product_id}`)
 
@@ -41,7 +41,7 @@ function CartMap(props) {
 
     const decrement = () => {
         const {product_id} = props.cart;
-        const {userId} = state.user
+        const {userId} = auth.user
         console.log(product_id, userId)
         axios.put(`/api/items/${userId}/${product_id}`)
 

@@ -1,18 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getCart} from '../redux/postReducer';
+import {getCart} from '../redux/reducer';
 import axios from 'axios';
 
 function ShopMapped(props) {
     
-    const state = useSelector(r => r);
+    const state = useSelector(r => r.reducer);
+    const auth = useSelector(r => r.authReducer);
     const dispatch = useDispatch();
     const {product} = props;
     console.log(state);
     const addToCart = () => {
         const {product_id} = product;
         
-        const {userId} = state.user
+        const {userId} = auth.user
         
         // console.log(userId, product_id)
             if (state.cart.length === 0) {
@@ -71,7 +72,7 @@ function ShopMapped(props) {
             <p>{product.price}</p>
             <p>{product.product_details}</p>
             <img src={product.image}/>
-            <button onClick={() => { state.isLoggedIn ? 
+            <button onClick={() => { auth.isLoggedIn ? 
                 addToCart() : alert('please log in to shop!') }}>Add to Cart</button>
 
             

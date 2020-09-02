@@ -2,11 +2,11 @@ import React from 'react';
 import InterviewMap from './InterviewMap'
 import {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getPosts} from '../redux/postReducer';
+import {getPosts} from '../redux/reducer';
 import axios from 'axios';
 
 const Interviews = () => {
-    const posts = useSelector(r => r.posts);
+    const posts = useSelector(r => r.reducer.posts);
     const dispatch = useDispatch();
 
     useEffect(() => {

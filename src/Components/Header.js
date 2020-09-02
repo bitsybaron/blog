@@ -2,14 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Sploosh from '../f1f14569-ef47-4ea7-b386-32f75cf1ca23_200x200.png'
 import {useSelector, useDispatch} from 'react-redux';
-import {logoutUser} from '../redux/postReducer';
+import {logoutUser} from '../redux/authReducer';
 import { useHistory } from "react-router-dom";
 
 import axios from 'axios';
 
 
 function Header() {
-    const state = useSelector((r) => r);
+    const state = useSelector((r) => r.authReducer);
     const dispatch = useDispatch();
     const history = useHistory();
     

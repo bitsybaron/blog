@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import ShopMapped from './ShopMapped'
 import {useSelector, useDispatch} from 'react-redux';
-import {getProducts} from '../redux/postReducer';
+import {getProducts} from '../redux/reducer';
 import axios from 'axios';
 
 function Shop() {
-    const shop = useSelector((r) => r.products); 
-    const state = useSelector(r => r);
+    const auth = useSelector(r => r.authReducer);
+    const state = useSelector(r => r.reducer);
     const dispatch = useDispatch();
     
 
@@ -21,11 +21,11 @@ function Shop() {
         
         <div>
             <div>
-    {state.isLoggedIn ? <p>Happy shopping, {state.user.name}!</p> :
+    {auth.isLoggedIn ? <p>Happy shopping, {auth.user.name}!</p> :
      null}
 
             </div>
-            {shop.map(product => {
+            {state.products.map(product => {
                 return <ShopMapped key={product.product_id} product={product}/>
             })}
         </div>

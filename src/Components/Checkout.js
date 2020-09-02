@@ -2,7 +2,7 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
-import {getCart} from '../redux/postReducer';
+import {getCart} from '../redux/reducer';
 
 
 const Checkout = (props) => {

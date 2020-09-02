@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import Post from './Post'
 import {useSelector, useDispatch} from 'react-redux';
-import {getPosts} from '../redux/postReducer';
+import {getPosts} from '../redux/reducer';
 import axios from 'axios';
 
 function Posts() {
-    const posts = useSelector((r) => r.posts); 
+    const state = useSelector((r) => r.reducer); 
     const dispatch = useDispatch();
     
 
@@ -20,7 +20,7 @@ function Posts() {
     return(
         
         <div>
-            {posts.map(post => {
+            {state.posts.map(post => {
                 return <Post key={post.post_id} post={post}/>
             })}
         </div>

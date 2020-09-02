@@ -1,20 +1,20 @@
 import React, {useEffect} from 'react';
 import CartMap from './CartMap'
 import {useSelector, useDispatch} from 'react-redux';
-import {getCart, getTotal} from '../redux/postReducer';
+import {getCart, getTotal} from '../redux/reducer';
 import axios from 'axios';
 import Checkout from './Checkout'
 
 
 function Cart() {
-    const cart = useSelector((r) => r.cart); 
-    const state = useSelector(r => r);
+    const auth = useSelector(r => r.authReducer); 
+    const state = useSelector(r => r.reducer);
     const dispatch = useDispatch();
     
     
 
     useEffect(() => {
-        const {userId} = state.user;
+        const {userId} = auth.user;
         axios.get(`/api/cart/${userId}`)
         .then(res => {
             dispatch(getCart(res.data))
@@ -22,7 +22,7 @@ function Cart() {
     }, [])
 
     useEffect(() => {
-        const {userId} = state.user;
+        const {userId} = auth.user;
         axios.get(`/api/total/${userId}`)
         .then(res => {
             const [total] = res.data
@@ -37,17 +37,17 @@ function Cart() {
     return(
         
         <div>
-            {cart.map(cart => {
-                return <CartMap key={cart.order_id} cart={cart} user={state.user}/>
+            {state.cart.map(cart => {
+                return <CartMap key={cart.order_id} cart={cart} user={auth.user}/>
             })}
             
-            {cart.length > 0 ? <div>
+            {state.cart.length > 0 ? <div>
             <p>Total: {state.total}</p>
             <Checkout 
                                 total={state.total * 100}
-                                getUser={state.user} 
+                                getUser={auth.user} 
                                 // orderId?
-                                user={state.user.userId} /> </div> : <p>Cart items go here!</p>}
+                                user={auth.user.userId} /> </div> : <p>Cart items go here!</p>}
            
         </div>
     

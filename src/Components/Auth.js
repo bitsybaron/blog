@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import {useSelector, useDispatch} from 'react-redux';
-import {registerUser, loginUser} from '../redux/postReducer';
+import {useDispatch} from 'react-redux';
+import {registerUser, loginUser} from '../redux/authReducer';
 import { useHistory } from "react-router-dom";
 
 const Auth = () => {
-    const user = useSelector(r => r.user);
     const dispatch = useDispatch();
     const history = useHistory();
 
