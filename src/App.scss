@@ -1,0 +1,22 @@
+// variables, nesting, states (use &:), separate files for chunks of code (import the file into the main scss file and name it beginning with an underscore (_header.scss), @import './header)
+
+//@mixin flexCenter($direction) {
+    //display: flex;
+    //flex-direction: $direction}
+
+    //@include flexCenter(column);
+
+@mixin flex($spacing) {
+    display: flex;
+    align-items: center;
+    justify-content: $spacing;
+}
+
+header {
+    @include flex(center);
+    nav {
+        @include flex(space-around);
+        background-color: gray;
+        width: 40%;
+    }
+}

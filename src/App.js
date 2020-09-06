@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import routes from '../src/routes';
 import './App.css'
+import './App.scss';
 
 function App() {
   

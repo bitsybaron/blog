@@ -44,6 +44,14 @@ module.exports = {
         const {userId, product_id} = req.params;
         const cart = await db.decrease_quantity([userId, product_id]);
         res.status(200).send(cart);
+    },
+    cartQuant: async (req, res) => {
+        const {userId} = req.params;
+        console.log(userId)
+        const db = req.app.get('db');
+        const quant = await db.cart_quantity(userId);
+        console.log(quant)
+        res.status(200).send(quant)
     }
 
 
