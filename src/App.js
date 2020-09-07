@@ -11,7 +11,8 @@ function App() {
     <div className='App'>
       
       <Header />
-      <hr></hr>
+      <hr class="zig"></hr>
+
       <main className='main'>
       {routes}
       </main>

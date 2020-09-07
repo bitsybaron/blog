@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
-import Sploosh from '../f1f14569-ef47-4ea7-b386-32f75cf1ca23_200x200.png'
+import Sploosh from '../sploosh.png'
 import {useSelector, useDispatch} from 'react-redux';
 import {logoutUser} from '../redux/authReducer';
 import { useHistory } from "react-router-dom";
@@ -17,7 +17,7 @@ function Header() {
     const history = useHistory();
     const {userId} = state.user
     const [cartQuant, setcartQuant] = useState(0);
-    const [hamburger, setHamburger] = useState(false);
+    const [menu, setMenu] = useState(false);
     
 
     useEffect(() => {
@@ -48,7 +48,7 @@ function Header() {
 
     return (
         <header>
-            <nav className='header-links'>
+            {menu ? <nav className='header-links'>
                 <p>About</p>
                 <Link className='headLink' to='/interviews'><p >Interviews</p></Link>
                 <Link className='headLink' to='/style'><p >Style</p></Link>
@@ -56,11 +56,12 @@ function Header() {
 
 
 
-            </nav>
-            <img className='hamburger' src={hamburger}/>
+            </nav> : null}
+            
+            <img onClick={() => setMenu(!menu)} className='hamburger' src={hamburger}/>
             <Link to='/'><img className="sploosh" src={Sploosh}/></Link>
             <img className='account' src={account}/>
-            <nav>
+            <nav className='account-links'>
                 <Link to='/shop'><p>Shop</p></Link>
                 {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
                  <p onClick={() => logout()}>Logout</p>}
