@@ -4,6 +4,8 @@ import Sploosh from '../f1f14569-ef47-4ea7-b386-32f75cf1ca23_200x200.png'
 import {useSelector, useDispatch} from 'react-redux';
 import {logoutUser} from '../redux/authReducer';
 import { useHistory } from "react-router-dom";
+import hamburger from '../icons8-menu-64.png';
+import account from '../icons8-account-48.png';
 
 import axios from 'axios';
 
@@ -15,6 +17,7 @@ function Header() {
     const history = useHistory();
     const {userId} = state.user
     const [cartQuant, setcartQuant] = useState(0);
+    const [hamburger, setHamburger] = useState(false);
     
 
     useEffect(() => {
@@ -45,7 +48,7 @@ function Header() {
 
     return (
         <header>
-            <nav>
+            <nav className='header-links'>
                 <p>About</p>
                 <Link className='headLink' to='/interviews'><p >Interviews</p></Link>
                 <Link className='headLink' to='/style'><p >Style</p></Link>
@@ -54,9 +57,10 @@ function Header() {
 
 
             </nav>
+            <img className='hamburger' src={hamburger}/>
             <Link to='/'><img className="sploosh" src={Sploosh}/></Link>
+            <img className='account' src={account}/>
             <nav>
-                
                 <Link to='/shop'><p>Shop</p></Link>
                 {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
                  <p onClick={() => logout()}>Logout</p>}

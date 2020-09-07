@@ -1,25 +1,56 @@
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-header nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background-color: gray;
-  width: 40%;
+@media (max-width: 375px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header .header-links {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  header img {
+    height: 150px;
+  }
+  header .hamburger {
+    height: 50px;
+  }
+  header .hamburger:active {
+    border-radius: 50%;
+    background-color: #fca995;
+  }
+  header .account {
+    height: 45px;
+  }
+  header .account:active {
+    border-radius: 50%;
+    background-color: #fca995;
+  }
+  .post {
+    width: 85%;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    color: #555151;
+  }
+  .post img {
+    height: 180px;
+  }
+  .post-title {
+    font-size: 28px;
+    text-align: center;
+  }
+  hr {
+    width: 80%;
+  }
 }
 /*# sourceMappingURL=App.css.map */
