@@ -19,7 +19,7 @@ function Posts() {
     
     return(
         
-        <div>
+        <div className='post-container'>
             {state.posts.map(post => {
                 return <Post key={post.post_id} post={post}/>
             })}

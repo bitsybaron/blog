@@ -19,7 +19,7 @@ function Travel() {
     
     return(
         
-        <div>
+        <div className='post-container'>
             {posts.map(post => {
                 return <TravelMap key={post.post_id} post={post}/>
             })}

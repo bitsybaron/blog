@@ -14,62 +14,13 @@
     justify-content: $spacing;
 }
 
-@media (max-width: 375px) {
-    header {
-        .header-links {
-            display: block;
-            position: absolute;
-            background-color: #f9f9f9;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            border-radius: 5%;
-            padding: 12px 16px;
-            z-index: 1;
-            width: 100px;
-            top: 100px;
-            left: 0px;
-            color: rgb(187, 61, 39);
-            transition: height 0.5s;  
-        }
-        
-        img {
-            height: 170px;
-            margin: 0 10px;
-        
-        }
-        .hamburger {
-            display: block;
-            height: 40px;
-            
-        }
-        .account {
-            display: block;
-            height: 40px;
-            
-        }
-        .account-links {
-            display: none;
-        }
-        .full-screen-links {
-            display: none;
-        }
-    }
-    border: none; 
-    width: 100%; 
-    margin: auto; 
-    
-    position: absolute;
-    top: 170px;
-    
-     
-    hr.zig {height: 10px; background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%); background-size: 10px 10px; background-color: #ffa3d6;}
-    
-    }
+
 
     .register {
         @include flex(center);
         flex-direction: column;
         width: 85%;
-        margin: 40px auto;
+        margin: 0 auto;
         
         .name {
             margin-top: 40px;
@@ -94,7 +45,7 @@
         display: none;
     }
       
-    hr.zig {
+    .zig {
         display: none;
     }
        
@@ -147,5 +98,101 @@ header {
 }
 
 .full-screen-links, .account-links {
+    font-size: 20px;
     color: gray;
+    
+}
+
+footer {
+    @include flex(space-around);
+    background-color: pink;
+    height: 100px;
+    div {
+        width: 50%;
+    }
+}
+
+@media (max-width: 375px) {
+    header {
+        .header-links {
+            display: block;
+            position: absolute;
+            margin: 5px auto;
+            .headLink {
+                font-size: 20px;
+                color: rgb(70, 70, 70);
+            }
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5%;
+            padding: 12px 16px;
+            z-index: 1;
+            width: 100px;
+            top: 100px;
+            left: 0px;
+            animation-name: fadeIn;
+            animation-duration: .5s;
+            animation-iteration-count: 1;
+
+        }
+        
+        img {
+            height: 170px;
+            margin: 0 10px;
+        
+        }
+        .hamburger {
+            display: block;
+            height: 40px;
+            
+        }
+        .account {
+            display: block;
+            height: 40px;
+            
+        }
+        .account-links {
+            display: none;
+        }
+        .full-screen-links {
+            display: none;
+        }
+    }
+   .post-container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+   .post {
+       margin: 5px 0;
+       width: 85%;
+       .img-container {
+           margin: 0;
+           img {
+               height: 280px;
+           }
+       }
+   }
+    
+     
+    hr.zig {
+        display: block;
+        border: none; 
+        width: 100%; 
+        margin: auto; 
+        position: absolute;
+        top: 150px;
+
+        margin-bottom: 5%; 
+        height: 10px; background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%); background-size: 10px 10px; background-color: #ffa3d6;
+    }
+    
+    }
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }

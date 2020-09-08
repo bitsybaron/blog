@@ -49,15 +49,24 @@ function Header() {
     return (
         <header>
             {menu ? <nav className='header-links'>
-                <p>About</p>
-                <Link onClick={() => setMenu(!menu)} className='headLink' to='/interviews'><p >Interviews</p></Link>
-                <Link onClick={() => setMenu(!menu)} className='headLink' to='/style'><p >Style</p></Link>
-                <Link onClick={() => setMenu(!menu)} className='headLink' to='/travel'><p >Travel</p></Link>
+                <p onClick={() => {
+                    history.push('/about')
+                    setMenu(!menu)
+                }} className='about' className='headLink'>About</p>
+                <p onClick={() => {
+                    history.push('/interviews')
+                    setMenu(!menu)}} className='interviews' className='headLink'>Interviews</p>
+                <p onClick={() => {
+                    history.push('/style')
+                    setMenu(!menu)}} className='style' className='headLink'>Style</p>
+                <p onClick={() => {
+                    history.push('/travel')
+                    setMenu(!menu)}} className='travel' className='headLink' >Travel</p>
 
 
 
             </nav> : <nav className='full-screen-links'>
-                <p>About</p>
+                <p onClick={() => history.push('/about')}>About</p>
                 <p className='full-screen-link' onClick={() => history.push('/interviews')}>Interviews</p>
                 <p className='full-screen-link' onClick={() => history.push('/style')}>Style</p>
                 <p className='full-screen-link' onClick={() => history.push('/travel')}>Travel</p> </nav>} 

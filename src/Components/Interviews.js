@@ -17,7 +17,7 @@ const Interviews = () => {
     }, [])
 
     return(
-        <div>
+        <div className='post-container'>
             {posts.map(post => {
                 return <InterviewMap key={post.post_id} post={post}/>
             })}
