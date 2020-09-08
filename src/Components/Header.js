@@ -50,17 +50,19 @@ function Header() {
         <header>
             {menu ? <nav className='header-links'>
                 <p>About</p>
-                <Link className='headLink' to='/interviews'><p >Interviews</p></Link>
-                <Link className='headLink' to='/style'><p >Style</p></Link>
-                <Link className='headLink' to='/travel'><p >Travel</p></Link>
+                <Link onClick={() => setMenu(!menu)} className='headLink' to='/interviews'><p >Interviews</p></Link>
+                <Link onClick={() => setMenu(!menu)} className='headLink' to='/style'><p >Style</p></Link>
+                <Link onClick={() => setMenu(!menu)} className='headLink' to='/travel'><p >Travel</p></Link>
 
 
 
             </nav> : null}
             
             <img onClick={() => setMenu(!menu)} className='hamburger' src={hamburger}/>
-            <Link to='/'><img className="sploosh" src={Sploosh}/></Link>
-            <img className='account' src={account}/>
+            <Link to='/'><img onClick={() => setMenu(false)} className="sploosh" src={Sploosh}/></Link>
+            <img onClick={!state.isLoggedIn ? () => {
+                history.push('/auth')
+            } : null} className='account' src={account}/>
             <nav className='account-links'>
                 <Link to='/shop'><p>Shop</p></Link>
                 {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
