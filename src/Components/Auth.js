@@ -35,14 +35,16 @@ const Auth = () => {
 
     return(
         <div> {!existingUser ?
-        <div>
-            Name
-            <input value={name} onChange={(e) => setName(e.target.value)}/>
-            Email 
-            <input value={email} onChange={(e) => setEmail(e.target.value)}/>
-            Password
-            <input value={password} type='password' onChange={(e) => setPassword(e.target.value)}/>
-            <button onClick={() => register()}>Register for an Account</button><br/><br/>
+        <div className='register'>
+            <p>Create an Account to Shop our Faves!</p>
+            <p>You'll also have access to monthly specials, and our style Newsletter.</p>
+            
+            <input className='name' placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
+            
+            <input placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+            
+            <input value={password} placeholder='Password' type='password' onChange={(e) => setPassword(e.target.value)}/>
+            <button onClick={() => register()}>Register</button><br/><br/>
             Aready have an account? <p onClick={() => setExistingUser(true)}>Login Here</p>   
         </div> : <div>
             Email <input value={email} onChange={(e) => setEmail(e.target.value)}/>

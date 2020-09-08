@@ -1,18 +1,4 @@
 @media (max-width: 375px) {
-  header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  header .account-links {
-    display: none;
-  }
   header .header-links {
     display: block;
     position: absolute;
@@ -34,72 +20,149 @@
     margin: 0 10px;
   }
   header .hamburger {
+    display: block;
     height: 40px;
   }
   header .account {
+    display: block;
     height: 40px;
   }
-  .post {
-    width: 85%;
-    margin: 5px auto;
-    font-family: 'Open Sans', sans-serif;
-    color: #555151;
-    padding-bottom: 30px;
+  header .account-links {
+    display: none;
   }
-  .post .img-container {
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  header .full-screen-links {
+    display: none;
   }
-  .post img {
-    height: 180px;
-  }
-  .post .post-title {
-    font-size: 28px;
-    text-align: center;
-    padding: 0;
-    margin: 10px auto;
-  }
-  .post .post-description {
-    color: #cc1f75;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    text-align: center;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  .post-description {
-    color: #cc1f75;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
+  border: none;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 170px;
   hr.zig {
-    border: none;
-    width: 100%;
-    margin: auto;
-    position: absolute;
-    top: 145px;
     height: 10px;
     background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%);
     background-size: 10px 10px;
     background-color: #ffa3d6;
   }
+}
+
+.register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 85%;
+  margin: 40px auto;
+}
+
+.register .name {
+  margin-top: 40px;
+}
+
+.register input {
+  height: 20px;
+  margin: 10px;
+}
+
+button {
+  background-color: white;
+  border-radius: 8%;
+  font-family: 'Open Sans', sans-serif;
+  color: #cc1f75;
+  padding: 8px;
+}
+
+.account, .hamburger {
+  display: none;
+}
+
+hr.zig {
+  display: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 35%;
+}
+
+.post {
+  width: 45%;
+  margin: 5px auto;
+  font-family: 'Open Sans', sans-serif;
+  color: #555151;
+  padding-bottom: 30px;
+}
+
+.post:hover {
+  cursor: pointer;
+}
+
+.post .img-container {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.post img {
+  height: 350px;
+}
+
+.post .post-title {
+  font-size: 28px;
+  text-align: center;
+  padding: 0;
+  margin: 10px auto;
+}
+
+.post .post-description {
+  color: #cc1f75;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.full-screen-links, .account-links {
+  color: gray;
 }
 /*# sourceMappingURL=App.css.map */

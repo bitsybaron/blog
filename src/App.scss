@@ -16,10 +16,6 @@
 
 @media (max-width: 375px) {
     header {
-        @include flex(center);
-        .account-links {
-            display: none;
-        }
         .header-links {
             display: block;
             position: absolute;
@@ -32,88 +28,124 @@
             top: 100px;
             left: 0px;
             color: rgb(187, 61, 39);
-            transition: height 0.5s;
-            
-            
+            transition: height 0.5s;  
         }
+        
         img {
             height: 170px;
             margin: 0 10px;
         
         }
         .hamburger {
+            display: block;
             height: 40px;
             
         }
         .account {
+            display: block;
             height: 40px;
             
         }
-    }
-    .post {
-        width: 85%;
-        margin: 5px auto;
-        font-family: 'Open Sans', sans-serif;
-        color: rgb(85, 81, 81);
-        padding-bottom: 30px;
-        
-        .img-container {
-            margin: 0 auto;
-            @include flex(center);
+        .account-links {
+            display: none;
         }
-        img {
-            height: 180px;
+        .full-screen-links {
+            display: none;
+        }
+    }
+    border: none; 
+    width: 100%; 
+    margin: auto; 
+    
+    position: absolute;
+    top: 170px;
+    
+     
+    hr.zig {height: 10px; background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%); background-size: 10px 10px; background-color: #ffa3d6;}
+    
+    }
+
+    .register {
+        @include flex(center);
+        flex-direction: column;
+        width: 85%;
+        margin: 40px auto;
+        
+        .name {
+            margin-top: 40px;
+        }
+        input {
+            height: 20px;
+            margin: 10px;
             
         }
-        .post-title {
-            font-size: 28px;
-            text-align: center;
-            padding: 0;
-            margin: 10px auto;
-        }
-        .post-description {
-            color: #cc1f75;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+    }
+
+
+    button {
+        background-color: white;
+        border-radius: 8%;
+        font-family: 'Open Sans', sans-serif;
+        color: #cc1f75;
+        padding: 8px;
     }
     
+    .account, .hamburger {
+        display: none;
+    }
+      
+    hr.zig {
+        display: none;
+    }
+       
+
+      
+      
+    
+
+header {
+    @include flex(center);
+    nav {
+        @include flex(space-around);
+        width: 35%;
+
+    }
+}
+
+.post {
+    width: 45%;
+    margin: 5px auto;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(85, 81, 81);
+    padding-bottom: 30px;
+    &:hover {
+        cursor: pointer;
+    }
+    
+    .img-container {
+        margin: 0 auto;
+        @include flex(center);
+    }
+    img {
+        height: 350px;
+        
+    }
+    .post-title {
+        font-size: 28px;
+        text-align: center;
+        padding: 0;
+        margin: 10px auto;
+    }
     .post-description {
         color: #cc1f75;
         display: flex;
         justify-content: center;
+        text-align: center;
         margin-bottom: 10px;
         font-weight: bold;
     }
-    
-    hr.zig {
-        border: none; 
-        width: 100%; 
-        margin: auto; 
-        
-        position: absolute;
-        top: 145px;
-        
-         
-        height: 10px; background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%); background-size: 10px 10px; background-color: #ffa3d6;}
-    }
+}
 
-      
-      
-      
-
-      
-      
-    
-
-// header {
-//     @include flex(center);
-//     nav {
-//         @include flex(space-around);
-//         background-color: gray;
-//         width: 40%;
-//     }
-// }
+.full-screen-links, .account-links {
+    color: gray;
+}

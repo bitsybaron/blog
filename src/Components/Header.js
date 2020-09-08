@@ -56,7 +56,11 @@ function Header() {
 
 
 
-            </nav> : null}
+            </nav> : <nav className='full-screen-links'>
+                <p>About</p>
+                <p className='full-screen-link' onClick={() => history.push('/interviews')}>Interviews</p>
+                <p className='full-screen-link' onClick={() => history.push('/style')}>Style</p>
+                <p className='full-screen-link' onClick={() => history.push('/travel')}>Travel</p> </nav>} 
             
             <img onClick={() => setMenu(!menu)} className='hamburger' src={hamburger}/>
             <Link to='/'><img onClick={() => setMenu(false)} className="sploosh" src={Sploosh}/></Link>
@@ -64,10 +68,10 @@ function Header() {
                 history.push('/auth')
             } : null} className='account' src={account}/>
             <nav className='account-links'>
-                <Link to='/shop'><p>Shop</p></Link>
-                {!state.isLoggedIn ? <Link to='/auth'><p >Sign Up</p></Link> :
+                <p onClick={() => history.push('/shop')}>Shop</p>
+                {!state.isLoggedIn ? <p onClick={() => history.push('/auth')}>Sign Up</p> :
                  <p onClick={() => logout()}>Logout</p>}
-                <Link to='/cart'><p>Cart({cartQuant})</p></Link>
+                <p onClick={() => history.push('/cart')}>Cart({cartQuant})</p>
             </nav>
             
         </header>
