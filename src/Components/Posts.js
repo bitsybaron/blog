@@ -18,12 +18,24 @@ function Posts() {
     
     
     return(
-        
+        <div className='new'>
+        <div className='newsletter'>
+                <h2>Sign Up for Our Newsletter!</h2>
+                <p>Get your weekly dose of celeb goss and style inspiration.</p>
+                <input placeholder='Email'/>
+                <button>Sign Up</button>
+
+        </div>
         <div className='post-container'>
+            
             {state.posts.map(post => {
                 return <Post key={post.post_id} post={post}/>
             })}
+
         </div>
+        </div>
+        
+        
     )
 }
 

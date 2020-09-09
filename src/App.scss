@@ -13,8 +13,37 @@
     align-items: center;
     justify-content: $spacing;
 }
+    
+    .socials {
+        position: absolute;
+        width: 200px;
+        right: 20px;
+        top: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        
 
+        img {
+            height: 35px;
+        }
+    }
+    .newsletter {
+        color: rgb(65, 65, 65);
+        background-color: rgb(255, 255, 144);
+        position: absolute;
+        left: 70px;
+        top: 290px;
+        width: 150px;
+    }
 
+    hr.zig {
+        width: 77%;
+        height: 1px;
+        background-color: gray;
+        border-radius: 5%;
+        position: relative;
+        top: -18px;
+    }
 
     .register {
         @include flex(center);
@@ -45,17 +74,19 @@
         display: none;
     }
       
-    .zig {
-        display: none;
-    }
+    
        
-
+    
       
       
     
 
 header {
+    
     @include flex(center);
+    .sploosh {
+        height: 150px;
+    }
     nav {
         @include flex(space-around);
         width: 35%;
@@ -63,6 +94,12 @@ header {
     }
 }
 
+
+
+.post-container {
+    width: 80%;
+    
+}
 .post {
     width: 45%;
     margin: 5px auto;
@@ -74,11 +111,13 @@ header {
     }
     
     .img-container {
-        margin: 0 auto;
+        // margin: 0 auto;
         @include flex(center);
     }
     img {
         height: 350px;
+        // box-shadow: 1px 1px 1px yellow;
+        // border-radius: 5%;
         
     }
     .post-title {
@@ -86,6 +125,7 @@ header {
         text-align: center;
         padding: 0;
         margin: 10px auto;
+        font-weight: bold;
     }
     .post-description {
         color: #cc1f75;
@@ -100,6 +140,9 @@ header {
 .full-screen-links, .account-links {
     font-size: 20px;
     color: gray;
+    .full-screen-link {
+        border-bottom: yellow;
+    }
     
 }
 
@@ -111,16 +154,31 @@ footer {
         width: 50%;
     }
 }
-
+.new {
+    display: flex;
+    justify-content: center;
+}
 @media (max-width: 375px) {
+    .socials {
+        display: none;
+    }
+    .post-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .newsletter {
+        display: none;
+    }
     header {
         .header-links {
             display: block;
             position: absolute;
-            margin: 5px auto;
+            margin: 5px 0;
             .headLink {
                 font-size: 20px;
                 color: rgb(70, 70, 70);
+                
             }
             background-color: #f9f9f9;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -158,16 +216,12 @@ footer {
             display: none;
         }
     }
-   .post-container {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-   }
    .post {
        margin: 5px 0;
-       width: 85%;
+       width: 95%;
        .img-container {
-           margin: 0;
+           margin-top: 5px;
+           
            img {
                height: 280px;
            }
