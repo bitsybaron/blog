@@ -6,6 +6,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -16,12 +19,43 @@
 }
 
 .newsletter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #414141;
   background-color: #ffff90;
-  position: absolute;
-  left: 70px;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 10px;
   top: 290px;
-  width: 150px;
+  width: 250px;
+  height: 265px;
+  -webkit-box-shadow: 1px 1px 4px #afaeae;
+          box-shadow: 1px 1px 4px #afaeae;
+}
+
+.newsletter input {
+  padding: 5px;
+}
+
+.newsletter input, .newsletter button {
+  margin-bottom: 15px;
+}
+
+.newsletter button {
+  color: #464444;
+  font-size: 20px;
 }
 
 hr.zig {
@@ -63,7 +97,7 @@ hr.zig {
 button {
   background-color: white;
   border-radius: 8%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Pacifico', cursive;
   color: #cc1f75;
   padding: 8px;
 }

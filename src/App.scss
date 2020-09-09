@@ -19,8 +19,7 @@
         width: 200px;
         right: 20px;
         top: 20px;
-        display: flex;
-        justify-content: space-evenly;
+        @include flex(space-evenly);
         
 
         img {
@@ -28,12 +27,28 @@
         }
     }
     .newsletter {
+        @include flex(center);
+        text-align: center;
+        flex-direction: column;
         color: rgb(65, 65, 65);
         background-color: rgb(255, 255, 144);
-        position: absolute;
-        left: 70px;
+        position: sticky;
+        input {
+            padding: 5px;
+        }
+        input, button {
+            margin-bottom: 15px;
+        }
+        button {
+            color: rgb(70, 68, 68);
+            font-size: 20px;
+        }
+        
+        padding: 10px;
         top: 290px;
-        width: 150px;
+        width: 250px;
+        height: 265px;
+        box-shadow: 1px 1px 4px rgb(175, 174, 174);
     }
 
     hr.zig {
@@ -65,7 +80,7 @@
     button {
         background-color: white;
         border-radius: 8%;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Pacifico', cursive;;
         color: #cc1f75;
         padding: 8px;
     }
