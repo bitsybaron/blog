@@ -68,9 +68,8 @@ function ShopMapped(props) {
         
         
         <div className='product'>
-            <p >{product.product_name}</p>
-            <p>{product.price}</p>
-            <p>{product.product_details}</p>
+            <span className='product-name'>{product.product_name} <span className='price'>${product.price}</span></span>
+            {/* <p className='details'>{product.product_details}</p> */}
             <img src={product.image}/>
             <button onClick={() => { auth.isLoggedIn ? 
                 addToCart() : alert('please log in to shop!') }}>Add to Cart</button>
