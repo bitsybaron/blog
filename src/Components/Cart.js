@@ -36,11 +36,12 @@ function Cart() {
     
     return(
         
-        <div>
+        <div className='what'>
+            <div className='cart-container'>
             {state.cart.map(cart => {
                 return <CartMap key={cart.order_id} cart={cart} user={auth.user}/>
             })}
-            
+            </div>
             {state.cart.length > 0 ? <div>
             <p>Total: {state.total}</p>
             <Checkout 

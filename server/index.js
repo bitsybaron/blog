@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const app = express();
+const nodemailer = require('nodemailer');
 
 const massive = require('massive');
 const postCtrl = require('./postController');
@@ -12,7 +13,17 @@ const paymentCtrl = require('./paymentCtrl');
 
 app.use(express.json());
 
-const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, SECRET_KEY} = process.env
+const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, SECRET_KEY, SERVER_EMAIL, SERVER_PASSWORD} = process.env
+
+const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: SERVER_EMAIL,
+      pass: SERVER_PASSWORD
+    }
+  })
+
+  app.set('transporter', transporter);
 
 
 app.use(session({

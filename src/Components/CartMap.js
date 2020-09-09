@@ -56,15 +56,15 @@ function CartMap(props) {
     
     return(
         
-    <div>
+    <div className='cart'>
         {props.cart.quantity > 0 ? 
-        <div><p>{props.cart.product_name}</p>
+        <div className='cart-child'><span className='product-name'>{props.cart.product_name} <span>${props.cart.price}</span></span>
         <img className='cart-pic' src={props.cart.image}/>
-        <p>${props.cart.price}</p>
-        <button onClick={decrement}>-</button>
-        <p>{props.cart.quantity}</p>
-        <button onClick={increment}>+</button>
-        <button onClick={() => deleteItem(props.cart.product_id)}>Remove from Cart</button>
+        
+        <button className='crement'onClick={decrement}>-</button>
+        <span>{props.cart.quantity}</span>
+        <button className='crement' onClick={increment}>+</button>
+        <button className='remove' onClick={() => deleteItem(props.cart.product_id)}>Remove Items</button>
         </div> : null}
     </div>
     )      

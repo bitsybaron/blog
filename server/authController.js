@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db');
+        const transporter = req.app.get('transporter');
         const {name, email, password} = req.body;
         const existingUser = await db.check_user(email);
         if (existingUser[0]) {
@@ -16,6 +17,21 @@ module.exports = {
                 name: newUser[0].name,
                 email: newUser[0].email
             }
+            const mailOptions = {
+                from: 'Sploosh',
+                to: email,
+                subject: 'Welcome! So happy to have you.',
+                //could do text or html
+                text: 'It is an honor and privilege to correspond with you.'
+
+            }
+            transporter.sendMail(mailOptions, (err, data) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log('email sent successfully!')
+                }
+            })
             res.status(200).send(req.session.user)
         }
     },
