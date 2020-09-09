@@ -311,13 +311,19 @@ footer div {
   }
   .post {
     margin: 5px 0;
-    width: 95%;
+    width: 70%;
   }
   .post .img-container {
     margin-top: 5px;
   }
   .post .img-container img {
     height: 280px;
+    -webkit-animation: none;
+            animation: none;
+  }
+  .post .content {
+    margin-left: 15px;
+    width: 90%;
   }
   hr.zig {
     display: block;
