@@ -110,11 +110,11 @@ header nav {
 }
 
 .post-container {
-  width: 80%;
+  width: 100%;
 }
 
 .post {
-  width: 105%;
+  width: 80%;
   margin: 5px auto;
   font-family: 'Open Sans', sans-serif;
   color: #555151;
@@ -123,6 +123,10 @@ header nav {
 
 .post:hover {
   cursor: pointer;
+}
+
+.post .content {
+  width: 500px;
 }
 
 .post .img-container {
@@ -139,6 +143,19 @@ header nav {
 
 .post img {
   height: 350px;
+  padding: 5px;
+  border: 2px solid pink;
+}
+
+.post img:hover {
+  -webkit-animation-name: dim;
+          animation-name: dim;
+  -webkit-animation-duration: 300ms;
+          animation-duration: 300ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .post .post-title {
@@ -298,6 +315,24 @@ footer div {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes dim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .75;
+  }
+}
+
+@keyframes dim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .75;
   }
 }
 /*# sourceMappingURL=App.css.map */

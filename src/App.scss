@@ -100,12 +100,12 @@ header {
     justify-content: center;
 }
 .post-container {
-    width: 80%;
+    width: 100%;
     
     
 }
 .post {
-    width: 105%;
+    width: 80%;
     margin: 5px auto;
     font-family: 'Open Sans', sans-serif;
     color: rgb(85, 81, 81);
@@ -113,13 +113,23 @@ header {
     &:hover {
         cursor: pointer;
     }
-    
+    .content {
+        width: 500px;
+    }
     .img-container {
         // margin: 0 auto;
         @include flex(center);
     }
     img {
         height: 350px;
+        padding: 5px;
+        border: 2px solid pink;
+        &:hover {
+            animation-name: dim;
+            animation-duration: 300ms;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
         // box-shadow: 1px 1px 1px yellow;
         // border-radius: 5%;
         
@@ -252,5 +262,14 @@ footer {
     }
     100% {
         opacity: 1
+    }
+}
+
+@keyframes dim {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: .75
     }
 }

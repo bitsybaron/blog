@@ -11,7 +11,7 @@ function Post(props) {
             {readMore === false ? 
             <p onClick={() => setReadMore(true)}>Read more...</p> : 
             <div>
-            <p>{props.post.content}</p>
+            <p className='content'>{props.post.content}</p>
             <p onClick={() => setReadMore(false)}>Read Less</p>
             </div>}
         </div>
