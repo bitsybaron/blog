@@ -100,12 +100,21 @@ header nav {
   width: 35%;
 }
 
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .post-container {
   width: 80%;
 }
 
 .post {
-  width: 45%;
+  width: 105%;
   margin: 5px auto;
   font-family: 'Open Sans', sans-serif;
   color: #555151;

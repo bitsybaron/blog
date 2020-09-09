@@ -95,13 +95,17 @@ header {
 }
 
 
-
+.main {
+    display: flex;
+    justify-content: center;
+}
 .post-container {
     width: 80%;
     
+    
 }
 .post {
-    width: 45%;
+    width: 105%;
     margin: 5px auto;
     font-family: 'Open Sans', sans-serif;
     color: rgb(85, 81, 81);
