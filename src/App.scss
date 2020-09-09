@@ -13,7 +13,20 @@
     align-items: center;
     justify-content: $spacing;
 }
-    
+    // .App {
+    //     background-image: url('./moroccan-flower.png');
+    // }
+    .shop-container {
+        width: 80vw;
+        
+        align-items: center;
+        justify-content: space-around;
+        img {
+            height: 350px;
+        }
+        display: flex;
+        flex-wrap: wrap;
+    }
     .socials {
         position: absolute;
         width: 200px;
@@ -32,7 +45,8 @@
         flex-direction: column;
         color: rgb(65, 65, 65);
         background-color: rgb(255, 255, 144);
-        position: sticky;
+        position: absolute;
+        
         input {
             padding: 5px;
         }
@@ -42,12 +56,14 @@
         button {
             color: rgb(70, 68, 68);
             font-size: 20px;
+            padding: 3px;
         }
         
         padding: 10px;
-        top: 290px;
-        width: 250px;
-        height: 265px;
+        top: 300px;
+        left: 75px;
+        width: 190px;
+        height: 250px;
         box-shadow: 1px 1px 4px rgb(175, 174, 174);
     }
 
@@ -99,6 +115,7 @@
 header {
     
     @include flex(center);
+    
     .sploosh {
         height: 150px;
     }
@@ -185,7 +202,8 @@ footer {
 }
 .new {
     display: flex;
-    justify-content: center;
+    
+    
 }
 @media (max-width: 375px) {
     .socials {

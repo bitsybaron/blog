@@ -1,3 +1,21 @@
+.shop-container {
+  width: 80vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.shop-container img {
+  height: 350px;
+}
+
 .socials {
   position: absolute;
   width: 200px;
@@ -35,12 +53,12 @@
           flex-direction: column;
   color: #414141;
   background-color: #ffff90;
-  position: -webkit-sticky;
-  position: sticky;
+  position: absolute;
   padding: 10px;
-  top: 290px;
-  width: 250px;
-  height: 265px;
+  top: 300px;
+  left: 75px;
+  width: 190px;
+  height: 250px;
   -webkit-box-shadow: 1px 1px 4px #afaeae;
           box-shadow: 1px 1px 4px #afaeae;
 }
@@ -56,6 +74,7 @@
 .newsletter button {
   color: #464444;
   font-size: 20px;
+  padding: 3px;
 }
 
 hr.zig {
@@ -243,9 +262,6 @@ footer div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 @media (max-width: 375px) {

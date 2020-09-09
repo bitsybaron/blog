@@ -18,16 +18,17 @@ function Shop() {
     }, [state.cart])
     
     return(
-        
         <div>
-            <div>
-    {auth.isLoggedIn ? <p>Happy shopping, {auth.user.name}!</p> :
-     null}
+            <div className='shop-welcome'>
+            {auth.isLoggedIn ? <h3>Happy shopping, {auth.user.name}!</h3> :
+             null}
 
             </div>
+        <div className='shop-container'>
             {state.products.map(product => {
                 return <ShopMapped key={product.product_id} product={product}/>
             })}
+        </div>
         </div>
     )
 }
