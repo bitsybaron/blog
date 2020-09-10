@@ -320,7 +320,7 @@ header {
         
     }
     .post-title {
-        font-size: 28px;
+        font-size: 24px;
         text-align: center;
         padding: 0;
         margin: 10px auto;
@@ -464,8 +464,14 @@ footer {
         }
     }
    .post {
-       margin: 5px 0;
+       margin: 15px 0;
        width: 70%;
+       .post-title {
+           font-size: 19px;
+       }
+       .post-description {
+           margin-top: 0px;
+       }
        .img-container {
            margin-top: 5px;
            
