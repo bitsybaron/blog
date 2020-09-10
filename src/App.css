@@ -167,6 +167,7 @@
 }
 
 .socials {
+  display: none;
   position: absolute;
   width: 200px;
   right: 20px;
@@ -183,6 +184,7 @@
 }
 
 .socials img {
+  display: none;
   height: 35px;
 }
 
@@ -301,6 +303,10 @@ button {
   font-family: 'Pacifico', cursive;
   color: #cc1f75;
   padding: 8px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .account, .hamburger {
@@ -423,6 +429,10 @@ header nav {
   border-bottom: yellow;
 }
 
+.full-screen-links:hover, .account-links:hover {
+  cursor: pointer;
+}
+
 footer {
   display: none;
   position: fixed;
@@ -504,6 +514,30 @@ footer div {
     font-size: 20px;
     color: #464646;
   }
+  header .account-drop-down-links {
+    display: block;
+    position: absolute;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    padding: 12px 16px;
+    z-index: 1;
+    width: 100px;
+    top: 100px;
+    right: 0px;
+    -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+    -webkit-animation-duration: .5s;
+            animation-duration: .5s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+  }
+  header .account-drop-down-links p {
+    font-size: 20px;
+    color: #464646;
+  }
   header img {
     height: 170px;
     margin: 0 10px;
@@ -537,6 +571,10 @@ footer div {
   .post .content {
     margin-left: 15px;
     width: 90%;
+  }
+  .shop-welcome {
+    font-size: 18px;
+    margin-left: 20px;
   }
   hr.zig {
     display: block;

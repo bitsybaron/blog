@@ -18,6 +18,7 @@ function Header() {
     const {userId} = state.user
     const [cartQuant, setcartQuant] = useState(0);
     const [menu, setMenu] = useState(false);
+    const [accountDrop, setAccountDrop] = useState(false);
     
 
     useEffect(() => {
@@ -39,7 +40,7 @@ function Header() {
             console.log('logged out');
             dispatch(logoutUser());
             history.push('/')
-            alert('Sad!! See you soon, hon')
+            alert('Logged out!')
 
 
         }).catch(err => console.log(err))
@@ -79,11 +80,33 @@ function Header() {
                 <p className='full-screen-link' onClick={() => history.push('/style')}>Style</p>
                 <p className='full-screen-link' onClick={() => history.push('/travel')}>Travel</p> </nav>} 
             
-            <img onClick={() => setMenu(!menu)} className='hamburger' src={hamburger}/>
-            <Link to='/'><img onClick={() => setMenu(false)} className="sploosh" src={Sploosh}/></Link>
+            <img onClick={() => {
+                setAccountDrop(false)
+                setMenu(!menu)}} className='hamburger' src={hamburger}/>
+            <Link to='/'><img onClick={() => {
+                setAccountDrop(false)
+                setMenu(false)}} className="sploosh" src={Sploosh}/></Link>
             <img onClick={!state.isLoggedIn ? () => {
-                history.push('/auth')
-            } : null} className='account' src={account}/>
+                setMenu(false)
+                history.push('/auth')} : () => {
+                setMenu(false);
+                setAccountDrop(!accountDrop);
+                console.log(accountDrop)
+            }} className='account' src={account}/>
+            {/* <img onClick={() => {
+                !state.isLoggedIn ? history.push('/auth') : setAccountDrop(true)}} className='account' src={account}/> */}
+            
+                {accountDrop ? <div className='account-drop-down-links'><p onClick={() => {
+                    history.push('/cart')
+                    setAccountDrop(!accountDrop)
+                }}>My Cart</p>
+                <p onClick={() => {
+                    logout();
+                    setAccountDrop(!accountDrop)
+                }}>Logout</p></div> : null}
+                
+
+            
             <nav className='account-links'>
                 <p onClick={() => history.push('/shop')}>Shop</p>
                 {!state.isLoggedIn ? <p onClick={() => history.push('/auth')}>Sign Up</p> :

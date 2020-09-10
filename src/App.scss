@@ -17,6 +17,7 @@ $cartColor: rgb(70, 70, 70);
     // .App {
     //     background-image: url('./moroccan-flower.png');
     // }
+    
     .stripe {
         margin-bottom: 50px;
     }
@@ -152,6 +153,7 @@ $cartColor: rgb(70, 70, 70);
         }
     }
     .socials {
+        display: none;
         position: absolute;
         width: 200px;
         right: 20px;
@@ -160,6 +162,7 @@ $cartColor: rgb(70, 70, 70);
         
 
         img {
+            display: none;
             height: 35px;
         }
     }
@@ -246,6 +249,9 @@ $cartColor: rgb(70, 70, 70);
         font-family: 'Pacifico', cursive;;
         color: #cc1f75;
         padding: 8px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     
     .account, .hamburger {
@@ -336,6 +342,9 @@ header {
     .full-screen-link {
         border-bottom: yellow;
     }
+    &:hover {
+        cursor: pointer;
+    }
     
 }
 
@@ -408,7 +417,28 @@ footer {
             animation-name: fadeIn;
             animation-duration: .5s;
             animation-iteration-count: 1;
-
+        }
+        
+        .account-drop-down-links {
+            display: block;
+            position: absolute;
+            margin: 5px 0;
+            p {
+                font-size: 20px;
+                color: rgb(70, 70, 70);
+                
+            }
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-radius: 5%;
+            padding: 12px 16px;
+            z-index: 1;
+            width: 100px;
+            top: 100px;
+            right: 0px;
+            animation-name: fadeIn;
+            animation-duration: .5s;
+            animation-iteration-count: 1;
         }
         
         img {
@@ -449,6 +479,11 @@ footer {
            width: 90%;
        }
    }
+
+   .shop-welcome {
+       font-size: 18px;
+       margin-left: 20px;
+   }
     
      
     hr.zig {
@@ -462,6 +497,7 @@ footer {
         margin-bottom: 5%; 
         height: 10px; background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%); background-size: 10px 10px; background-color: #ffa3d6;
     }
+    
     
     }
 @keyframes fadeIn {
