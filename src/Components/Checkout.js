@@ -28,7 +28,7 @@ const Checkout = (props) => {
 
     
     return(
-            <div>
+            <div className='stripe'>
                 <StripeCheckout 
                     label="Proceed to Checkout"
                     token={onToken}

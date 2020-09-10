@@ -1,3 +1,7 @@
+.stripe {
+  margin-bottom: 50px;
+}
+
 .about {
   width: 60%;
   color: #464646;
@@ -7,6 +11,12 @@
   color: #cc1f75;
   font-size: 30px;
   font-family: 'Pacifico', cursive;
+}
+
+.total-container {
+  color: #464646;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .cart-container {
@@ -24,7 +34,13 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 280px;
-  background-color: pink;
+}
+
+.alternate {
+  margin: auto auto;
+  color: #464646;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .cart {
@@ -39,16 +55,23 @@
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 2px solid pink;
 }
 
 .cart img {
   display: block;
   width: 70%;
   margin: 0 auto;
+  margin-top: 15px;
 }
 
 .cart .remove {
   display: block;
+  margin: 0 auto;
+  color: #464646;
+  font-family: 'open sans';
 }
 
 .cart .crement-container {
@@ -58,7 +81,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .cart .crement-container .crement {
@@ -70,12 +94,17 @@
   padding-left: 10px;
 }
 
+.cart .crement-container span {
+  margin: auto auto;
+}
+
 .cart .cart-child {
   color: #464646;
 }
 
 .cart .cart-child .product-name {
-  font-size: 22px;
+  margin: 0 auto;
+  font-size: 18px;
 }
 
 .shop-welcome {

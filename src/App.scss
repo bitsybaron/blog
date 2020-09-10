@@ -17,7 +17,9 @@ $cartColor: rgb(70, 70, 70);
     // .App {
     //     background-image: url('./moroccan-flower.png');
     // }
-
+    .stripe {
+        margin-bottom: 50px;
+    }
     .about {
         width: 60%;
         color: $cartColor;
@@ -27,6 +29,11 @@ $cartColor: rgb(70, 70, 70);
             font-family: 'Pacifico', cursive;
         }
     }
+    .total-container {
+        color: $cartColor;
+        font-size: 20px;
+        font-weight: bold;
+    }
     .cart-container {
         
         display: flex;
@@ -34,45 +41,63 @@ $cartColor: rgb(70, 70, 70);
         align-items: center;
         justify-content: center;
         width: 280px;
-        background-color: pink;
+
 
     }
-
+    .alternate {
+        margin: auto auto;
+        color: $cartColor;
+        font-size: 30px;
+        font-weight: bold; 
+    }
     .cart {
         
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
+        margin-bottom: 30px;
+        padding: 15px;
+        border: 2px solid pink;
         
         img {
             display: block;
             width: 70%;
             margin: 0 auto;
+            margin-top: 15px;
         }
         .remove {
             display: block;
+            margin: 0 auto;
+            color: $cartColor;
+            font-family: 'open sans';
             
         }
         .crement-container {
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            width: 50%;
+            margin: 0 auto;
             .crement {
                 margin: 5px auto;
                 display: inline-block;
                 height: 35px;
+                
                 padding: 5px;
                 padding-right: 10px;
                 padding-left: 10px;
+            }
+            span {
+                margin: auto auto;
             }
         }
         
         .cart-child {
             color: $cartColor;
             .product-name {
+                margin: 0 auto;
                 
-                font-size: 22px;
+                font-size: 18px;
                 
             }
         }

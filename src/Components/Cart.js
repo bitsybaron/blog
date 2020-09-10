@@ -42,13 +42,13 @@ function Cart() {
                 return <CartMap key={cart.order_id} cart={cart} user={auth.user}/>
             })}
             </div>
-            {state.cart.length > 0 ? <div>
+            {state.cart.length > 0 ? <div className='total-container'>
             <p>Total: ${state.total}</p>
             <Checkout 
                                 total={state.total * 100}
                                 getUser={auth.user} 
                                 // orderId?
-                                user={auth.user.userId} /> </div> : <p>Cart items go here!</p>}
+                                user={auth.user.userId} /> </div> : <p className='alternate'>Cart items go here!</p>}
            
         </div>
     
