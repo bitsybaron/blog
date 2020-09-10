@@ -67,6 +67,9 @@ function Header() {
                 <p onClick={() => {
                     history.push('/travel')
                     setMenu(!menu)}} className='travel' className='headLink' >Travel</p>
+                <p onClick={() => {
+                    history.push('/shop')
+                    setMenu(!menu)}} className='headLink'>Shop</p>
 
 
 
