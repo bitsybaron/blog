@@ -60,10 +60,11 @@ function CartMap(props) {
         {props.cart.quantity > 0 ? 
         <div className='cart-child'><span className='product-name'>{props.cart.product_name} <span>${props.cart.price}</span></span>
         <img className='cart-pic' src={props.cart.image}/>
-        
+        <div className='crement-container'>
         <button className='crement'onClick={decrement}>-</button>
         <span>{props.cart.quantity}</span>
         <button className='crement' onClick={increment}>+</button>
+        </div>
         <button className='remove' onClick={() => deleteItem(props.cart.product_id)}>Remove Items</button>
         </div> : null}
     </div>

@@ -43,7 +43,7 @@ function Cart() {
             })}
             </div>
             {state.cart.length > 0 ? <div>
-            <p>Total: {state.total}</p>
+            <p>Total: ${state.total}</p>
             <Checkout 
                                 total={state.total * 100}
                                 getUser={auth.user} 

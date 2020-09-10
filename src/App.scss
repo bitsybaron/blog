@@ -18,39 +18,70 @@ $cartColor: rgb(70, 70, 70);
     //     background-image: url('./moroccan-flower.png');
     // }
 
+    .about {
+        width: 60%;
+        color: $cartColor;
+        .slogan {
+            color: #cc1f75;
+            font-size: 30px;
+            font-family: 'Pacifico', cursive;
+        }
+    }
     .cart-container {
         
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        width: 280px;
+        background-color: pink;
+
     }
 
     .cart {
         
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        width: 40%;
-        // margin: 0 auto;
+        width: 100%;
+        
         img {
             display: block;
-            width: 50%;
+            width: 70%;
+            margin: 0 auto;
         }
         .remove {
             display: block;
+            
         }
-        .crement {
-            display: inline;
+        .crement-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            .crement {
+                margin: 5px auto;
+                display: inline-block;
+                height: 35px;
+                padding: 5px;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
         }
+        
         .cart-child {
+            color: $cartColor;
             .product-name {
-                color: $cartColor;
-                font-size: 20px;
+                
+                font-size: 22px;
+                
             }
         }
         
     }
-    
+    .shop-welcome {
+        color: $cartColor;
+        font-size: 25px;
+    }
     
     .shop-container {
         width: 60vw;
@@ -149,13 +180,31 @@ $cartColor: rgb(70, 70, 70);
         top: -18px;
     }
 
-    .register {
+    .register, .login {
+        color: $cartColor;
         @include flex(center);
         flex-direction: column;
         width: 85%;
         margin: 0 auto;
         
         .name {
+            margin-top: 40px;
+        }
+
+        
+        input {
+            height: 20px;
+            margin: 10px;
+            
+        }
+    }
+    .login {
+        @include flex(center);
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+        
+        .email {
             margin-top: 40px;
         }
         input {
@@ -266,6 +315,7 @@ header {
 }
 
 footer {
+    display: none;
     position: fixed;
     bottom: 0px;
     background-color: pink;

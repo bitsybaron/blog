@@ -1,3 +1,14 @@
+.about {
+  width: 60%;
+  color: #464646;
+}
+
+.about .slogan {
+  color: #cc1f75;
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+}
+
 .cart-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,38 +20,67 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 280px;
+  background-color: pink;
 }
 
 .cart {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 40%;
+  width: 100%;
 }
 
 .cart img {
   display: block;
-  width: 50%;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .cart .remove {
   display: block;
 }
 
-.cart .crement {
-  display: inline;
+.cart .crement-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.cart .crement-container .crement {
+  margin: 5px auto;
+  display: inline-block;
+  height: 35px;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.cart .cart-child {
+  color: #464646;
 }
 
 .cart .cart-child .product-name {
+  font-size: 22px;
+}
+
+.shop-welcome {
   color: #464646;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .shop-container {
@@ -171,7 +211,8 @@ hr.zig {
   top: -18px;
 }
 
-.register {
+.register, .login {
+  color: #464646;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,11 +230,38 @@ hr.zig {
   margin: 0 auto;
 }
 
-.register .name {
+.register .name, .login .name {
   margin-top: 40px;
 }
 
-.register input {
+.register input, .login input {
+  height: 20px;
+  margin: 10px;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.login .email {
+  margin-top: 40px;
+}
+
+.login input {
   height: 20px;
   margin: 10px;
 }
@@ -327,6 +395,7 @@ header nav {
 }
 
 footer {
+  display: none;
   position: fixed;
   bottom: 0px;
   background-color: pink;

@@ -3,10 +3,12 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {getCart} from '../redux/reducer';
+import {useHistory} from 'react-router-dom';
 
 
 const Checkout = (props) => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const onToken = async(token) => {
         token.card = void 0;
         let today = new Date();
@@ -16,9 +18,10 @@ const Checkout = (props) => {
         today = mm + '/' + dd + '/' + yyyy;
         await axios.post('/api/payment', {token, amount: props.total, user_id: props.user, date: today})
         .then(res => {
-            alert('payment complete')
+            alert('Payment Complete! You will receive an email receipt shortly.')
             console.log(res.data)
             dispatch(getCart(res.data))
+            history.push('/');
 
         })
     }
