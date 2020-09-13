@@ -17,7 +17,12 @@ $cartColor: rgb(70, 70, 70);
     // .App {
     //     background-image: url('./moroccan-flower.png');
     // }
-    
+    .myCart {
+        color: $cartColor;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
     .stripe {
         margin-bottom: 50px;
     }
@@ -277,6 +282,19 @@ header {
         width: 35%;
 
     }
+    .full-screen-links, .account-links {
+        p {
+            &:hover {
+                animation-name: biggify;
+                animation-duration: 600ms;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+
+        }
+        
+        
+    }
 }
 
 
@@ -364,6 +382,27 @@ footer {
     
 }
 
+@media (max-width: 800px) {
+    .newsletter {
+        display: none;
+    }
+    .about {
+        width: 80%;
+    }
+    header {
+        .account-links, .full-screen-links {
+            font-size: 15px;
+        }
+    }
+    .shop-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+    h3 {
+        margin-left: 50px;
+        font-size: 18px;
+    }
+}
 
 @media (max-width: 375px) {
     .socials {
@@ -392,6 +431,7 @@ footer {
     .cart-container {
         margin-top: 30px;
     }
+    
 
     .alternate {
         margin-top: 30px;
@@ -418,6 +458,7 @@ footer {
             animation-duration: .5s;
             animation-iteration-count: 1;
         }
+    
         
         .account-drop-down-links {
             display: block;
@@ -521,5 +562,15 @@ footer {
     }
     100% {
         opacity: .75
+    }
+}
+
+@keyframes biggify {
+    0% {
+        
+    } 
+    100% {
+        color: rgb(75, 74, 74);
+        font-size: 21px;
     }
 }

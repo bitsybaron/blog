@@ -11,7 +11,7 @@ const Auth = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [existingUser, setExistingUser] = useState(false);
+    const [existingUser, setExistingUser] = useState(true);
     
 
     const register = (props) => {
