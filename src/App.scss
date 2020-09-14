@@ -441,8 +441,20 @@ footer {
         margin-left: 30px;
         font-size: 18px;
     }
-    
-    
+    p {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .register {
+        h3 {
+        text-align: center;
+        margin: 10px auto;
+        width: 230px;
+        }
+    }
+    .login {
+        height: 320px;
+    }
 }
 
 @media (max-width: 375px) {
