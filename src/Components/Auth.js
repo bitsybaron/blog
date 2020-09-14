@@ -37,7 +37,7 @@ const Auth = () => {
         <div className='auth'> {!existingUser ?
         <div className='register'>
             <h3>Create an Account to Shop our Faves!</h3>
-            <p>You'll also have access to monthly specials, and our style Newsletter.</p>
+            <p>You'll also have access to monthly specials, and our style newsletter.</p>
             
             <input className='name' placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
             
