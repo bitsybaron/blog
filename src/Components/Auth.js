@@ -34,9 +34,9 @@ const Auth = () => {
     }
 
     return(
-        <div> {!existingUser ?
+        <div className='auth'> {!existingUser ?
         <div className='register'>
-            <p>Create an Account to Shop our Faves!</p>
+            <h3>Create an Account to Shop our Faves!</h3>
             <p>You'll also have access to monthly specials, and our style Newsletter.</p>
             
             <input className='name' placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
@@ -45,13 +45,13 @@ const Auth = () => {
             
             <input value={password} placeholder='Password' type='password' onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={() => register()}>Register</button><br/><br/>
-            Aready have an account? <p onClick={() => setExistingUser(true)}>Login Here</p>   
+            <p onClick={() => setExistingUser(true)} className='switchAuth'>Login Here</p>   
         </div> : <div className='login'>
-            <h3>Login</h3>
+            <h3>Welcome back!</h3>
             <input className='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input  placeholder='Password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={() => login()}>Login</button>
-            New to Sploosh? <p onClick={() => setExistingUser(false)}>Create an account here</p>
+            New to Sploosh? <p onClick={() => setExistingUser(false)} className='switchAuth'>Create an account here</p>
         </div>
         }
         </div>

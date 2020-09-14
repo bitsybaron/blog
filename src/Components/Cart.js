@@ -37,7 +37,7 @@ function Cart() {
     return(
         
         <div className='what'>
-            {auth.isLoggedIn ? <p className='myCart'>My Cart</p> : null}
+            {state.cart.length > 0 ? <p className='myCart'>My Cart</p> : null}
             <div className='cart-container'>
             {state.cart.map(cart => {
                 return <CartMap key={cart.order_id} cart={cart} user={auth.user}/>
