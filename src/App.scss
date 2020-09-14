@@ -579,7 +579,25 @@ footer {
         margin-bottom: 5%; 
         height: 10px; background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%); background-size: 10px 10px; background-color: #ffa3d6;
     }
-    
+    .register {
+        width: 280px;
+        height: 420px;
+        margin-bottom: 30px;
+        p {
+            margin: 0 auto;
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+            margin: 10px auto;
+            width: 230px;
+        }
+        .switchAuth {
+            position: absolute;
+            top: 565px;
+        }
+        
+    }
     
     }
 @keyframes fadeIn {

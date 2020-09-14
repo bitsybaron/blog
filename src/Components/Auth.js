@@ -45,7 +45,7 @@ const Auth = () => {
             
             <input value={password} placeholder='Password' type='password' onChange={(e) => setPassword(e.target.value)}/>
             <button onClick={() => register()}>Register</button><br/><br/>
-            <p onClick={() => setExistingUser(true)} className='switchAuth'>Login Here</p>   
+            <p onClick={() => setExistingUser(true)} className='switchAuth'>Already have an account?<br/>Login Here</p>   
         </div> : <div className='login'>
             <h3>Welcome back!</h3>
             <input className='email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
