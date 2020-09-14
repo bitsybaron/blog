@@ -420,6 +420,9 @@ footer {
     }
     .about {
         width: 80%;
+        .content {
+            text-align: left;
+        }
     }
     header {
         .account-links, .full-screen-links {
