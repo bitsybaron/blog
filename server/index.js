@@ -63,7 +63,8 @@ app.get(`/api/cart/:userId`, shopCtrl.getCart);
 app.put(`/api/item/:userId/:product_id`, shopCtrl.increase);
 app.put('/api/items/:userId/:product_id', shopCtrl.decrease);
 app.get('/api/total/:userId', shopCtrl.getTotal);
-app.get('/api/items/:userId', shopCtrl.cartQuant)
+app.get('/api/items/:userId', shopCtrl.cartQuant);
+app.get('/api/order/history/:userId', paymentCtrl.orderHistory);
 
 
 

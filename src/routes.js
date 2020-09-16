@@ -9,6 +9,7 @@ import Shop from './Components/Shop';
 import Cart from './Components/Cart';
 import Auth from './Components/Auth';
 import About from './Components/About';
+import Account from './Components/Account';
 
 
 
@@ -24,5 +25,6 @@ export default (
         <Route path='/checkout' component={Checkout}/>
         <Route path='/cart' component={Cart}/>
         <Route path='/about' component={About}/>
+        <Route path='/account' component={Account}/>
     </Switch>
 )

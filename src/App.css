@@ -1,3 +1,9 @@
+.myCart {
+  color: #464646;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .stripe {
   margin-bottom: 50px;
 }
@@ -70,8 +76,10 @@
 .cart .remove {
   display: block;
   margin: 0 auto;
-  color: #464646;
+  color: #cc1f75;
+  font-weight: bold;
   font-family: 'open sans';
+  border-radius: 0;
 }
 
 .cart .crement-container {
@@ -257,17 +265,49 @@ hr.zig {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 85%;
-  margin: 0 auto;
+  width: 300px;
+  margin: 0px auto;
+  border: 3px solid pink;
 }
 
 .register .name, .login .name {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .register input, .login input {
-  height: 20px;
-  margin: 10px;
+  height: 35px;
+  margin: 13px;
+}
+
+.register button, .login button {
+  color: #5c5c5c;
+  padding: 11px;
+  border-color: #cc1f75;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.register p, .login p {
+  margin-top: 0px;
+}
+
+.auth {
+  width: 100vw;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.auth .switchAuth {
+  text-align: center;
+}
+
+.auth .switchAuth:hover {
+  cursor: pointer;
+}
+
+.auth .register .switchAuth {
+  position: absolute;
+  top: 570px;
 }
 
 .login {
@@ -284,17 +324,17 @@ hr.zig {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 85%;
   margin: 0 auto;
 }
 
 .login .email {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
-.login input {
-  height: 20px;
-  margin: 10px;
+.register {
+  width: 40%;
+  margin-top: 0px;
+  height: 410px;
 }
 
 button {
@@ -339,6 +379,17 @@ header nav {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 35%;
+}
+
+header .full-screen-links p:hover, header .account-links p:hover {
+  -webkit-animation-name: biggify;
+          animation-name: biggify;
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .main {
@@ -451,9 +502,49 @@ footer div {
   display: flex;
 }
 
+@media (max-width: 800px) {
+  .newsletter {
+    display: none;
+  }
+  .about {
+    width: 80%;
+  }
+  .about .content {
+    text-align: left;
+  }
+  header .account-links, header .full-screen-links {
+    font-size: 15px;
+  }
+  header .account-links p:hover, header .full-screen-links p:hover {
+    -webkit-animation-name: none;
+            animation-name: none;
+  }
+  .shop-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  h3 {
+    margin: 10px auto;
+    margin-left: 30px;
+    font-size: 18px;
+  }
+  p {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .register h3 {
+    text-align: center;
+    margin: 10px auto;
+    width: 230px;
+  }
+  .login {
+    height: 320px;
+  }
+}
+
 @media (max-width: 375px) {
   .socials {
-    display: none;
+    display: inline;
   }
   .post-container {
     display: -webkit-box;
@@ -469,6 +560,9 @@ footer div {
   }
   .newsletter {
     display: none;
+  }
+  .myCart {
+    margin-top: 20px;
   }
   .shop-container {
     margin-top: 130px;
@@ -581,6 +675,7 @@ footer div {
   .shop-welcome {
     font-size: 18px;
     margin-left: 20px;
+    margin-top: 30px;
   }
   hr.zig {
     display: block;
@@ -594,6 +689,24 @@ footer div {
     background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%);
     background-size: 10px 10px;
     background-color: #ffa3d6;
+  }
+  .register {
+    width: 280px;
+    height: 430px;
+    margin-bottom: 30px;
+  }
+  .register p {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .register h3 {
+    text-align: center;
+    margin: 10px auto;
+    width: 230px;
+  }
+  .register .switchAuth {
+    position: absolute;
+    top: 565px;
   }
 }
 
@@ -630,6 +743,24 @@ footer div {
   }
   100% {
     opacity: .75;
+  }
+}
+
+@-webkit-keyframes biggify {
+  0% {
+  }
+  100% {
+    color: #4b4a4a;
+    font-size: 21px;
+  }
+}
+
+@keyframes biggify {
+  0% {
+  }
+  100% {
+    color: #4b4a4a;
+    font-size: 21px;
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -22,7 +22,7 @@ module.exports = {
                 to: email,
                 subject: 'Welcome! So happy to have you.',
                 //could do text or html
-                text: 'Welcome to Sploosh! Be on the lookout for sweet deals headed to your inbox, and for our monthly Newsletter!'
+                text: 'Welcome to Sploosh! Be on the lookout for sweet deals headed to your inbox, and for our monthly Newsletter! XOXO'
 
             }
             transporter.sendMail(mailOptions, (err, data) => {

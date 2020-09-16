@@ -1,3 +1,7 @@
+UPDATE blog_cart
+SET purchase_date = $2
+WHERE user_id = $1 AND active = TRUE;
+
 UPDATE blog_cart 
 SET active = FALSE
 WHERE user_id = $1;

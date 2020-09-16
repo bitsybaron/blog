@@ -344,7 +344,7 @@ header {
     margin: 5px auto;
     font-family: 'Open Sans', sans-serif;
     color: rgb(85, 81, 81);
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     &:hover {
         cursor: pointer;
     }
@@ -460,21 +460,24 @@ footer {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 420px) {
     .socials {
         display: inline;
     }
     .post-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        width: 100%;
     }
     .newsletter {
         display: none;
 
     
     }
-    
+    .myCart {
+        margin-top: 20px;
+    }
     .shop-container {
         margin-top: 130px;
         width: 100%;
@@ -562,13 +565,16 @@ footer {
         }
     }
    .post {
-       margin: 15px 0;
-       width: 70%;
+       margin: 10px 0;
+       width: 80%;
        .post-title {
-           font-size: 19px;
+           width: 350px;
+           font-size: 17px;
        }
        .post-description {
            margin-top: 0px;
+           width: 350px;
+           font-size: 14px;
        }
        .img-container {
            margin-top: 5px;
@@ -579,8 +585,9 @@ footer {
            }
        }
        .content {
-           margin-left: 15px;
-           width: 90%;
+           margin: 10px auto;
+           width: 80%;
+           text-align: left;
        }
    }
 
@@ -596,10 +603,11 @@ footer {
         border: none; 
         width: 100%; 
         margin: auto; 
+        // margin-bottom: 15px;
         position: absolute;
-        top: 150px;
+        top: 140px;
 
-        margin-bottom: 5%; 
+        
         height: 10px; background: linear-gradient(135deg, white 25%, transparent 25%) -5px 0, linear-gradient(225deg, white 25%, transparent 25%) -5px 0, linear-gradient(315deg, white 25%, transparent 25%), linear-gradient(45deg, white 25%, transparent 25%); background-size: 10px 10px; background-color: #ffa3d6;
     }
     .register {

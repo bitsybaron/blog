@@ -14,8 +14,7 @@ module.exports = {
         })
 
         const db = req.app.get('db')
-        const cart = await db.complete_order(user_id)
-        console.log(cart);
+        const cart = await db.complete_order([user_id, date]);
         res.status(200).send(cart)
 
         if (!charge) {
@@ -28,5 +27,15 @@ module.exports = {
         }
         
     }, 
+    orderHistory: async (req, res) => {
+        const db = req.app.get('db');
+        const {userId} = req.params;
+        console.log(userId)
+        const orders = await db.get_order_history(userId);
+        console.log(orders);
+        res.status(200).send(orders);
+
+
+    }
 }
 
