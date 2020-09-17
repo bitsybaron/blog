@@ -96,10 +96,15 @@ function Header() {
             {/* <img onClick={() => {
                 !state.isLoggedIn ? history.push('/auth') : setAccountDrop(true)}} className='account' src={account}/> */}
             
-                {accountDrop ? <div className='account-drop-down-links'><p onClick={() => {
+                {accountDrop ? <div className='account-drop-down-links'>
+                <p onClick={() => {
                     history.push('/cart')
                     setAccountDrop(!accountDrop)
                 }}>My Cart</p>
+                <p onClick={() => {
+                    history.push('/shop');
+                    setAccountDrop(!accountDrop)
+                }}>Shop</p>
                 <p onClick={() => {
                     logout();
                     setAccountDrop(!accountDrop)

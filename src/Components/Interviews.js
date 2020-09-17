@@ -17,10 +17,12 @@ const Interviews = () => {
     }, [])
 
     return(
+        <div className='new'>
         <div className='post-container'>
             {posts.map(post => {
                 return <InterviewMap key={post.post_id} post={post}/>
             })}
+        </div>
         </div>
     )
 }

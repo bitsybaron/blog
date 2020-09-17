@@ -1,12 +1,7 @@
-// variables, nesting, states (use &:), separate files for chunks of code (import the file into the main scss file and name it beginning with an underscore (_header.scss), @import './header)
 
-//@mixin flexCenter($direction) {
-    //display: flex;
-    //flex-direction: $direction}
-
-    //@include flexCenter(column);
 
 $cartColor: rgb(70, 70, 70);
+$darkPink: #cc1f75;
 
     
 @mixin flex($spacing) {
@@ -17,10 +12,21 @@ $cartColor: rgb(70, 70, 70);
     // .App {
     //     background-image: url('./moroccan-flower.png');
     // }
+    .total-container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       margin-bottom: 30px;
+       .total {
+           margin-bottom: 10px;
+       }
+   }
     .myCart {
         color: $cartColor;
         font-size: 20px;
         font-weight: bold;
+        position: relative;
+        top: 10px;
 
     }
     .stripe {
@@ -29,11 +35,19 @@ $cartColor: rgb(70, 70, 70);
     .about {
         width: 60%;
         color: $cartColor;
-        .slogan {
-            color: #cc1f75;
-            font-size: 30px;
+        .welcome {
             font-family: 'Pacifico', cursive;
+            margin-bottom: 8px;
         }
+        
+
+        .slogan {
+            color: $darkPink;
+            font-size: 30px;
+            font-family: 'open sans';
+            
+        }
+        margin-bottom: 90px;
     }
     .total-container {
         color: $cartColor;
@@ -75,10 +89,12 @@ $cartColor: rgb(70, 70, 70);
         .remove {
             display: block;
             margin: 0 auto;
-            color: #cc1f75;
+            color: $darkPink;
             font-weight: bold;
             font-family: 'open sans';
-            border-radius: 0;
+            border-radius: 3px;
+            border: 1px solid white;
+            box-shadow: 2px 2px 2px gray;
             
         }
         .crement-container {
@@ -90,7 +106,9 @@ $cartColor: rgb(70, 70, 70);
                 margin: 5px auto;
                 display: inline-block;
                 height: 35px;
-                
+                border-radius: 3px;
+                border: 1px solid white;
+                box-shadow: 2px 2px 2px gray;
                 padding: 5px;
                 padding-right: 10px;
                 padding-left: 10px;
@@ -140,7 +158,7 @@ $cartColor: rgb(70, 70, 70);
                 margin-left: 5px;
             }
             button {
-                border: 2px solid #cc1f75;
+                border: 2px solid $darkPink;
                 box-shadow: 2px 2px 2px rgb(207, 206, 206);
                 font-weight: bold;
                 font-size: 18px;
@@ -236,7 +254,7 @@ $cartColor: rgb(70, 70, 70);
         button {
             color: rgb(92, 92, 92);
             padding: 11px;
-            border-color: #cc1f75;
+            border-color: $darkPink;
             font-size: 18px;
             margin-bottom: 10px;
         }
@@ -284,7 +302,7 @@ $cartColor: rgb(70, 70, 70);
         background-color: white;
         border-radius: 8%;
         font-family: 'Pacifico', cursive;;
-        color: #cc1f75;
+        color: $darkPink;
         padding: 8px;
         &:hover {
             cursor: pointer;
@@ -336,6 +354,7 @@ header {
 }
 .post-container {
     width: 100%;
+    display: flex;
     
     
 }
@@ -377,7 +396,7 @@ header {
         font-weight: bold;
     }
     .post-description {
-        color: #cc1f75;
+        color: $darkPink;
         display: flex;
         justify-content: center;
         text-align: center;
@@ -410,6 +429,7 @@ footer {
 }
 .new {
     display: flex;
+    margin-bottom: 80px;
     
     
 }
@@ -423,6 +443,7 @@ footer {
         .content {
             text-align: left;
         }
+        
     }
     header {
         .account-links, .full-screen-links {
@@ -446,7 +467,7 @@ footer {
     }
     p {
         margin: 0 auto;
-        text-align: center;
+        // text-align: center;
     }
     .register {
         h3 {
@@ -460,14 +481,14 @@ footer {
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
     .socials {
         display: inline;
     }
     .post-container {
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
     .newsletter {
@@ -475,8 +496,14 @@ footer {
 
     
     }
-    .myCart {
-        margin-top: 20px;
+    .slogan {
+
+        font-size: 17px !important;
+        margin-bottom: 10px;
+
+    }
+    .shop {
+        margin-bottom: 80px;
     }
     .shop-container {
         margin-top: 130px;
@@ -498,9 +525,11 @@ footer {
     }
     header {
         .header-links {
-            display: block;
+            display: flex;
+            flex-direction: column;
             position: absolute;
             margin: 5px 0;
+            height: 200px;
             .headLink {
                 font-size: 20px;
                 color: rgb(70, 70, 70);
@@ -521,7 +550,10 @@ footer {
     
         
         .account-drop-down-links {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            height: 110px;
+            justify-content: space-around;
             position: absolute;
             margin: 5px 0;
             p {
@@ -536,7 +568,7 @@ footer {
             z-index: 1;
             width: 100px;
             top: 100px;
-            right: 0px;
+            right: 17px;
             animation-name: fadeIn;
             animation-duration: .5s;
             animation-iteration-count: 1;
@@ -564,6 +596,9 @@ footer {
             display: none;
         }
     }
+    .post-guy {
+        width: 10%;
+    }
    .post {
        margin: 10px 0;
        width: 80%;
@@ -584,12 +619,15 @@ footer {
                animation: none;
            }
        }
-       .content {
+
+           .content {
            margin: 10px auto;
            width: 80%;
            text-align: left;
        }
+       
    }
+   
 
    .shop-welcome {
        font-size: 18px;

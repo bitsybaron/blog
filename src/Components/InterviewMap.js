@@ -4,7 +4,7 @@ function InterviewMap(props) {
     const [readMore, setReadMore] = useState(false);
     return(
         
-        <div className='post' onClick={() => setReadMore(!readMore)}>
+        <div className='post-guy' onClick={() => setReadMore(!readMore)} className='post'>
             <div>
             <p className='post-title'>{props.post.title}</p>
             <p className='post-description'>{props.post.description}</p>
@@ -12,7 +12,7 @@ function InterviewMap(props) {
             {readMore === false ? 
             <p onClick={() => setReadMore(true)}>Read more...</p> : 
             <div>
-            <p>{props.post.content}</p>
+            <p className='content'>{props.post.content}</p>
             <p onClick={() => setReadMore(false)}>Read Less</p>
             </div>}
         </div>

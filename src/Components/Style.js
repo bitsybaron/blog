@@ -18,11 +18,12 @@ function Style() {
     
     
     return(
-        
+        <div className='new'>
         <div className='post-container'>
             {posts.map(post => {
                 return <StyleMap key={post.post_id} post={post}/>
             })}
+        </div>
         </div>
     )
 }

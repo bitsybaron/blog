@@ -18,7 +18,7 @@ function Shop() {
     }, [state.cart])
     
     return(
-        <div>
+        <div className='shop'>
             <div className='shop-welcome'>
             {auth.isLoggedIn ? <h3>Happy shopping, {auth.user.name}!</h3> :
              null}

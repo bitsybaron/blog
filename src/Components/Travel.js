@@ -18,11 +18,12 @@ function Travel() {
     
     
     return(
-        
+        <div className='new'>
         <div className='post-container'>
             {posts.map(post => {
                 return <TravelMap key={post.post_id} post={post}/>
             })}
+        </div>
         </div>
     )
 }
