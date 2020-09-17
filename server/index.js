@@ -12,6 +12,7 @@ const paymentCtrl = require('./paymentCtrl');
 
 
 app.use(express.json());
+app.use( express.static( `${__dirname}/../build` ) );
 
 const {CONNECTION_STRING, SESSION_SECRET, SERVER_PORT, SECRET_KEY, SERVER_EMAIL, SERVER_PASSWORD} = process.env
 
