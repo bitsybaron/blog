@@ -58,7 +58,7 @@ function CartMap(props) {
         
     <div className='cart'>
         {props.cart.quantity > 0 ? 
-        <div className='cart-child'><span className='product-name'>{props.cart.product_name} <span>${props.cart.price}</span></span>
+        <div className='cart-child'><span className='item-name'>{props.cart.product_name} <span>${props.cart.price}</span></span>
         <img className='cart-pic' src={props.cart.image}/>
         <div className='crement-container'>
         <button className='crement'onClick={decrement}>-</button>

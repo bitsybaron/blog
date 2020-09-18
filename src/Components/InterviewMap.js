@@ -10,10 +10,10 @@ function InterviewMap(props) {
             <p className='post-description'>{props.post.description}</p>
             <div className='img-container'><img src={props.post.image}/></div>
             {readMore === false ? 
-            <p onClick={() => setReadMore(true)}>Read more...</p> : 
+            <p className='read' onClick={() => setReadMore(true)}>Read more...</p> : 
             <div>
             <p className='content'>{props.post.content}</p>
-            <p onClick={() => setReadMore(false)}>Read Less</p>
+            <p className='read' onClick={() => setReadMore(false)}>Read Less</p>
             </div>}
         </div>
         </div>

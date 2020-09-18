@@ -9,8 +9,9 @@ $darkPink: #cc1f75;
     align-items: center;
     justify-content: $spacing;
 }
-    // .App {
-    //     background-image: url('./moroccan-flower.png');
+    
+    // .App{
+    //     box-sizing: border-box;
     // }
     .total-container {
        display: flex;
@@ -123,7 +124,6 @@ $darkPink: #cc1f75;
             color: $cartColor;
             .product-name {
                 margin: 0 auto;
-                
                 font-size: 18px;
                 
             }
@@ -173,7 +173,7 @@ $darkPink: #cc1f75;
                 margin: 0;
                 margin-bottom: 10px;
                 color: gray;
-                font-size: 20px;
+                
                 font-weight: bold;
             }
         }
@@ -435,6 +435,25 @@ footer {
     
 }
 
+@media (max-width: 1050px) {
+    .shop-container {
+        width: 80vw;
+    }
+    
+}
+
+@media (max-width: 900px) {
+    .account-links, .full-screen-links {
+        font-size: 15px;
+        p {
+            &:hover {
+                animation-name: none;
+            }
+            
+        }
+    }
+}
+
 @media (max-width: 800px) {
     .newsletter {
         display: none;
@@ -446,17 +465,7 @@ footer {
         }
         
     }
-    header {
-        .account-links, .full-screen-links {
-            font-size: 15px;
-            p {
-                &:hover {
-                    animation-name: none;
-                }
-                
-            }
-        }
-    }
+    
     .shop-container {
         width: 80%;
         margin: 0 auto;
@@ -480,7 +489,11 @@ footer {
     .login {
         height: 320px;
     }
+    .product-name {
+        font-size: 18px;
+    }
 }
+
 
 @media (max-width: 500px) {
     .socials {
@@ -529,7 +542,7 @@ footer {
             display: flex;
             flex-direction: column;
             position: absolute;
-            margin: 5px 0;
+            
             height: 200px;
             .headLink {
                 font-size: 20px;
@@ -542,7 +555,7 @@ footer {
             padding: 12px 16px;
             z-index: 1;
             width: 100px;
-            top: 100px;
+            top: 95px;
             left: 0px;
             animation-name: fadeIn;
             animation-duration: .5s;
@@ -553,10 +566,10 @@ footer {
         .account-drop-down-links {
             display: flex;
             flex-direction: column;
-            height: 110px;
+            height: 120px;
             justify-content: space-around;
             position: absolute;
-            margin: 5px 0;
+            
             p {
                 font-size: 20px;
                 color: rgb(70, 70, 70);
@@ -568,8 +581,8 @@ footer {
             padding: 12px 16px;
             z-index: 1;
             width: 100px;
-            top: 100px;
-            right: 17px;
+            top: 95px;
+            right: 0px;
             animation-name: fadeIn;
             animation-duration: .5s;
             animation-iteration-count: 1;
@@ -611,6 +624,9 @@ footer {
            margin-top: 0px;
            width: 350px;
            font-size: 14px;
+       }
+       .read {
+           text-align: center;
        }
        .img-container {
            margin-top: 5px;
