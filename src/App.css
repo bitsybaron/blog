@@ -540,6 +540,9 @@ footer div {
   .shop-container {
     width: 80vw;
   }
+  .newsletter {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -553,6 +556,9 @@ footer div {
 }
 
 @media (max-width: 800px) {
+  .img-container img {
+    height: 270px;
+  }
   .newsletter {
     display: none;
   }
