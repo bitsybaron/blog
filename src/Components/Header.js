@@ -93,8 +93,6 @@ function Header() {
                 setAccountDrop(!accountDrop);
                 console.log(accountDrop)
             }} className='account' src={account}/>
-            {/* <img onClick={() => {
-                !state.isLoggedIn ? history.push('/auth') : setAccountDrop(true)}} className='account' src={account}/> */}
             
                 {accountDrop ? <div className='account-drop-down-links'>
                 <p onClick={() => {

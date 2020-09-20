@@ -22,7 +22,7 @@ function CartMap(props) {
         .catch(err => console.log(err))
         
 
-        // have my delete return the entire cart & add getCart
+        
     }
 
     const increment = () => {
@@ -61,7 +61,7 @@ function CartMap(props) {
         <div className='cart-child'><span className='item-name'>{props.cart.product_name} <span>${props.cart.price}</span></span>
         <img className='cart-pic' src={props.cart.image}/>
         <div className='crement-container'>
-        <button className='crement'onClick={decrement}>-</button>
+        <button className='crement'onClick={props.cart.quantity !== 1 ? () => decrement() : () => deleteItem(props.cart.product_id)}>-</button>
         <span>{props.cart.quantity}</span>
         <button className='crement' onClick={increment}>+</button>
         </div>
