@@ -201,6 +201,7 @@ $darkPink: #cc1f75;
         }
     }
     .newsletter {
+        display: none;
         @include flex(center);
         text-align: center;
         flex-direction: column;
