@@ -612,6 +612,10 @@ footer {
 
 
 @media (max-width: 500px) {
+    .product {
+        margin-top: 10px;
+    }
+    
     .socials {
         display: inline;
     }
@@ -626,6 +630,12 @@ footer {
         display: none;
 
     
+    }
+    .account-drop-down-links {
+        right: 0px;
+    }
+    .header-links {
+        left: 0px;
     }
     .slogan {
 
