@@ -202,9 +202,9 @@ $darkPink: #cc1f75;
     }
     .newsletter {
         display: none;
-        @include flex(center);
-        text-align: center;
-        flex-direction: column;
+        // @include flex(center);
+        // text-align: center;
+        // flex-direction: column;
         color: rgb(65, 65, 65);
         background-color: rgb(255, 255, 144);
         position: absolute;
