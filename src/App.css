@@ -151,7 +151,15 @@
 
 .shop-welcome {
   color: #464646;
-  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+.shop-welcome h3 {
+  font-weight: normal;
+  font-size: 23px;
+  margin: 0px 0px;
+  margin-bottom: 15px;
 }
 
 .shop-container {
@@ -230,20 +238,7 @@
 }
 
 .newsletter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: none;
   color: #414141;
   background-color: #ffff90;
   position: absolute;
@@ -509,10 +504,6 @@ header .full-screen-links p:hover, header .account-links p:hover {
   color: gray;
 }
 
-.full-screen-links .full-screen-link, .account-links .full-screen-link {
-  border-bottom: yellow;
-}
-
 .full-screen-links:hover, .account-links:hover {
   cursor: pointer;
 }
@@ -550,12 +541,15 @@ footer div {
     font-size: 15px;
   }
   .account-links p:hover, .full-screen-links p:hover {
-    -webkit-animation-name: none;
-            animation-name: none;
+    -webkit-animation-name: none !important;
+            animation-name: none !important;
   }
 }
 
 @media (max-width: 800px) {
+  .slogan {
+    margin-bottom: 30px;
+  }
   .img-container img {
     height: 270px;
   }
@@ -591,6 +585,112 @@ footer div {
   .product-name {
     font-size: 18px;
   }
+  .myCart {
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 700px) {
+  header .sploosh {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .full-screen-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    height: 40px;
+  }
+  .account {
+    display: block;
+    height: 40px;
+  }
+  .account-links {
+    display: none;
+  }
+  .full-screen-links {
+    display: none;
+  }
+  .header-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    height: 200px;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    padding: 12px 16px;
+    z-index: 1;
+    width: 100px;
+    top: 95px;
+    left: 100px;
+    -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+    -webkit-animation-duration: .5s;
+            animation-duration: .5s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+  }
+  .header-links .headLink {
+    font-size: 20px;
+    color: #464646;
+  }
+  .account-drop-down-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 120px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    position: absolute;
+    background-color: #f9f9f9;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    padding: 12px 16px;
+    z-index: 1;
+    width: 100px;
+    top: 95px;
+    right: 80px;
+    -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+    -webkit-animation-duration: .5s;
+            animation-duration: .5s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+  }
+  .account-drop-down-links p {
+    font-size: 20px;
+    color: #464646;
+  }
+  .shop {
+    margin-bottom: 80px;
+  }
+  .shop-container {
+    margin-top: 130px;
+    width: 90%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .shop-container .product {
+    width: 50%;
+  }
 }
 
 @media (max-width: 500px) {
@@ -609,6 +709,7 @@ footer div {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+    margin-bottom: 30px;
   }
   .newsletter {
     display: none;
@@ -640,88 +741,15 @@ footer div {
   .alternate {
     margin-top: 30px;
   }
-  header .header-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    position: absolute;
-    height: 200px;
-    background-color: #f9f9f9;
-    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 5%;
-    padding: 12px 16px;
-    z-index: 1;
-    width: 100px;
-    top: 95px;
-    left: 0px;
-    -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
-    -webkit-animation-duration: .5s;
-            animation-duration: .5s;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
-  }
-  header .header-links .headLink {
-    font-size: 20px;
-    color: #464646;
-  }
-  header .account-drop-down-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 120px;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    position: absolute;
-    background-color: #f9f9f9;
-    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 5%;
-    padding: 12px 16px;
-    z-index: 1;
-    width: 100px;
-    top: 95px;
-    right: 0px;
-    -webkit-animation-name: fadeIn;
-            animation-name: fadeIn;
-    -webkit-animation-duration: .5s;
-            animation-duration: .5s;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
-  }
-  header .account-drop-down-links p {
-    font-size: 20px;
-    color: #464646;
-  }
   header img {
     height: 170px;
     margin: 0 10px;
   }
-  header .hamburger {
-    display: block;
-    height: 40px;
-  }
-  header .account {
-    display: block;
-    height: 40px;
-  }
-  header .account-links {
-    display: none;
-  }
-  header .full-screen-links {
-    display: none;
-  }
   .post-guy {
     width: 10%;
+  }
+  .total-container {
+    margin-bottom: 100px;
   }
   .post {
     margin: 10px 0;
@@ -751,11 +779,6 @@ footer div {
     margin: 10px auto;
     width: 80%;
     text-align: left;
-  }
-  .shop-welcome {
-    font-size: 18px;
-    margin-left: 20px;
-    margin-top: 30px;
   }
   hr.zig {
     display: block;
