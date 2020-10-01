@@ -462,7 +462,7 @@ header .full-screen-links p:hover, header .account-links p:hover {
 }
 
 .post img {
-  height: 350px;
+  width: 550px;
   padding: 5px;
   border: 2px solid pink;
 }
@@ -549,9 +549,6 @@ footer div {
 @media (max-width: 800px) {
   .slogan {
     margin-bottom: 30px;
-  }
-  .img-container img {
-    height: 270px;
   }
   .newsletter {
     display: none;
@@ -691,6 +688,9 @@ footer div {
   .shop-container .product {
     width: 50%;
   }
+  .img-container img {
+    width: 470px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -765,28 +765,31 @@ footer div {
     width: 80%;
   }
   .post .post-title {
-    width: 350px;
     font-size: 17px;
   }
   .post .post-description {
     margin-top: 0px;
-    width: 350px;
     font-size: 14px;
   }
   .post .read {
     text-align: center;
   }
   .post .img-container {
+    margin: 0 auto;
     margin-top: 5px;
   }
   .post .img-container img {
-    height: 280px;
+    width: 100vw;
     -webkit-animation: none;
             animation: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-right: none;
+    border-left: none;
   }
   .post .content {
     margin: 10px auto;
-    width: 80%;
+    width: 95%;
     text-align: left;
   }
   hr.zig {

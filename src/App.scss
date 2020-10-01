@@ -385,7 +385,7 @@ header {
         @include flex(center);
     }
     img {
-        height: 350px;
+        width: 550px;
         padding: 5px;
         border: 2px solid pink;
         &:hover {
@@ -467,11 +467,7 @@ footer {
     .slogan {
         margin-bottom: 30px;
     }
-    .img-container {
-        img {
-            height: 270px;
-        }
-    }
+    
     .newsletter {
         display: none;
     }
@@ -606,6 +602,11 @@ footer {
             width: 50%;
         }
     }
+    .img-container {
+        img {
+            width: 470px;
+        }
+    }
 
 }
 
@@ -682,29 +683,35 @@ footer {
        margin: 10px 0;
        width: 80%;
        .post-title {
-           width: 350px;
+           
            font-size: 17px;
        }
        .post-description {
            margin-top: 0px;
-           width: 350px;
+           
            font-size: 14px;
        }
        .read {
            text-align: center;
        }
        .img-container {
+           margin: 0 auto;
            margin-top: 5px;
            
            img {
-               height: 280px;
+               width: 100vw;
                animation: none;
+               padding-left: 0px;
+               padding-right: 0px;
+               border-right: none;
+               border-left: none;
+               
            }
        }
 
            .content {
            margin: 10px auto;
-           width: 80%;
+           width: 95%;
            text-align: left;
        }
        
