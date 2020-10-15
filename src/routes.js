@@ -10,6 +10,7 @@ import Cart from './Components/Cart';
 import Auth from './Components/Auth';
 import About from './Components/About';
 import Account from './Components/Account';
+import Thumbnail from './Components/Thumbnail';
 
 
 
@@ -26,5 +27,6 @@ export default (
         <Route path='/cart' component={Cart}/>
         <Route path='/about' component={About}/>
         <Route path='/account' component={Account}/>
+        <Route path='/thumbnail' component={Thumbnail}/>
     </Switch>
 )
